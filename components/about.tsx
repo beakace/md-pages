@@ -16,32 +16,24 @@ export default function About() {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <SectionHeading>About me</SectionHeading>
+      <SectionHeading>About</SectionHeading>
       <p className="mb-3">
-        After working for couple years in{" "}
-        <span className="font-medium">marketing</span> field, I decided to
-        pursue my passion for programming. I was lucky enough to have couple of
-        experienced web developers as my friends so I started{" "}
-        <span className="font-semibold">working on real projects</span> as soon
-        I've got acquainted with basics of HTML, CSS and JavaScript{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is <span className="font-medium">React (Next.js, Remix), Tailwind</span>
-        . I am also familiar with TypeScript and Prisma. I am always looking to
-        learn new technologies. I am currently open for offers for{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer.
+        I’m a web developer based in Wrocław, Poland. I build websites and
+        landing pages for businesses that care about{" "}
+        <span className="font-medium">speed</span>,{" "}
+        <span className="font-medium">clarity</span>, and{" "}
+        <span className="font-medium">results</span>.
+      </p>
+      <p className="mb-3">
+        My background in <span className="font-medium">marketing</span> helps me
+        think beyond “just code” — messaging, user flow, and conversion matter.
+        On the technical side, I work mainly with{" "}
+        <span className="font-medium">Next.js / React</span>, TypeScript, and
+        Tailwind, and I also ship WordPress projects when that’s the right tool.
       </p>
       <p>
-        <span>
-          I'm a happy husband and a father of{" "}
-          <span className="font-bold">TWO</span> two year old boys
-        </span>
-        . Currently my previous contract ended and I am looking for a new
-        position. Also before I started coding I was a part time professional
-        musician but now in my free time I focus on being a better programmer. I
-        love <span className="font-medium">learning new things</span>.
+        If you need a reliable dev who communicates clearly and ships quickly,
+        I’m happy to help.
       </p>
     </motion.section>
   );

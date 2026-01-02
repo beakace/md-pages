@@ -10,11 +10,11 @@ interface ProjectsProps {
 }
 
 export default function Projects({ projects = [] }: ProjectsProps) {
-  const { ref } = useSectionInView("Projects");
+  const { ref } = useSectionInView("Work");
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
-      <SectionHeading>My projects</SectionHeading>
+    <section ref={ref} id="work" className="scroll-mt-28 mb-28">
+      <SectionHeading>Recent work</SectionHeading>
       <div>
         {projects.map((project, index) => (
           <Project key={index} {...project} />

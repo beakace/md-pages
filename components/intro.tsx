@@ -35,19 +35,6 @@ export default function Intro() {
               priority={true}
             />
           </motion.div>
-          <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
-            }}
-          >
-            👋
-          </motion.span>
         </div>
       </div>
       <motion.h1
@@ -56,18 +43,13 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "tween", duration: 0.2 }}
       >
-        <span className="font-bold">Hello, I'm Michał. </span>
-        I'm a passionate and creative{" "}
-        <span className="font-bold">React developer</span>. My current stack is{" "}
-        <span className="font-bold">Next.js</span> with{" "}
-        <span className="font-bold">Tailwind</span> +{" "}
-        <span className="font-bold">Framer Motion</span>, but I am flexible and
-        ready to grow and learn in any framework.{" "}
-        <span>
-          I'm <span className="italic">dedicated</span> to crafting{" "}
-          <span className="font-semibold">visually appealing</span> and{" "}
-          <span className="font-semibold">user-friendly</span> interfaces.
-        </span>{" "}
+        <span className="font-bold">Hi, I’m Michał.</span> I build fast, modern{" "}
+        <span className="font-bold">websites</span> and{" "}
+        <span className="font-bold">landing pages</span> that help you get
+        customers. I specialize in{" "}
+        <span className="font-bold">Next.js / React</span> and{" "}
+        <span className="font-bold">WordPress</span>, with a strong focus on
+        performance, UX, and clean implementation.
       </motion.h1>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -83,8 +65,19 @@ export default function Intro() {
             setTimeOfLastClick(Date.now());
           }}
         >
-          Contact me here
+          Get a quote
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+        </Link>
+        <Link
+          href="#work"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
+          onClick={() => {
+            setActiveSection("Work");
+            setTimeOfLastClick(Date.now());
+          }}
+        >
+          See my work
+          <BsArrowRight className="opacity-60 group-hover:translate-x-1 transition" />
         </Link>
         <a
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"

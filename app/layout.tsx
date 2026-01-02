@@ -10,8 +10,9 @@ import ThemeContextProvider from "@/context/theme-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Michał | Personal Portfolio",
-  description: "Michał - frontend developer",
+  title: "Michał Dziuba | Web Developer",
+  description:
+    "I build fast, modern websites and landing pages that help you get customers. Next.js, React, WordPress.",
 };
 
 export default function RootLayout({

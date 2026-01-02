@@ -31,11 +31,12 @@ export default function Contact() {
       <SectionHeading>Contact me</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Please contact me directly at{" "}
+        Tell me what you want to build. I’ll reply with next steps and a rough
+        estimate. You can also email me at{" "}
         <a className="underline" href="mailto:michaldziuba26@gmail.com">
           michaldziuba26@gmail.com
         </a>{" "}
-        or through this form.
+        .
       </p>
 
       <form
@@ -47,9 +48,16 @@ export default function Contact() {
             return;
           }
 
-          toast.success("Email sent succesfully");
+          toast.success("Message sent successfully");
         }}
       >
+        <input
+          className="h-14 px-4 rounded-lg borderBlack transition-all dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
+          name="senderName"
+          type="text"
+          maxLength={200}
+          placeholder="Your name (optional)"
+        />
         <input
           className="h-14 px-4 rounded-lg borderBlack transition-all dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
           name="senderEmail"
@@ -58,10 +66,38 @@ export default function Contact() {
           maxLength={500}
           placeholder="Your email"
         />
+        <select
+          className="h-14 px-4 rounded-lg borderBlack transition-all my-3 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
+          name="projectType"
+          defaultValue=""
+        >
+          <option value="" disabled>
+            What do you need? (optional)
+          </option>
+          <option value="Landing page">Landing page</option>
+          <option value="Business website">Business website</option>
+          <option value="Web app UI / front-end">Web app UI / front-end</option>
+          <option value="WordPress">WordPress</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+        <input
+          className="h-14 px-4 rounded-lg borderBlack transition-all dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
+          name="budget"
+          type="text"
+          maxLength={200}
+          placeholder="Budget range (optional)"
+        />
+        <input
+          className="h-14 px-4 rounded-lg borderBlack transition-all my-3 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
+          name="timeline"
+          type="text"
+          maxLength={200}
+          placeholder="Timeline / deadline (optional)"
+        />
         <textarea
-          className="h-52 my-3 rounded-lg borderBlack p-4 transition-all dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
+          className="h-52 rounded-lg borderBlack p-4 transition-all dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
           name="message"
-          placeholder="Your message"
+          placeholder="Briefly describe what you need (goals, pages/features, links/examples, etc.)"
           required
           maxLength={5000}
         />

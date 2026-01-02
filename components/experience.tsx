@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import SectionHeading from "./section-heading";
-import { experiencesData } from "@/lib/data";
+import { processSteps } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
 
@@ -58,15 +58,15 @@ const TimelineElement: React.FC<TimelineElementProps> = ({ item, theme }) => (
   </div>
 );
 
-const Experience: React.FC = () => {
-  const { ref } = useSectionInView("Experience");
+const Process: React.FC = () => {
+  const { ref } = useSectionInView("Process");
   const { theme } = useTheme();
 
   return (
-    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>My experience</SectionHeading>
+    <section id="process" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
+      <SectionHeading>Process</SectionHeading>
       <div className="mt-8">
-        {experiencesData.map((item, index) => (
+        {processSteps.map((item, index) => (
           <TimelineElement key={index} item={item} theme={theme} />
         ))}
       </div>
@@ -74,4 +74,4 @@ const Experience: React.FC = () => {
   );
 };
 
-export default Experience;
+export default Process;

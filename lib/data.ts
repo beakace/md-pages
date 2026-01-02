@@ -17,16 +17,16 @@ export const links = [
     hash: "#home",
   },
   {
-    name: "Skills",
-    hash: "#skills",
+    name: "Services",
+    hash: "#services",
   },
   {
-    name: "Projects",
-    hash: "#projects",
+    name: "Work",
+    hash: "#work",
   },
   {
-    name: "Experience",
-    hash: "#experience",
+    name: "Process",
+    hash: "#process",
   },
   {
     name: "About",
@@ -38,30 +38,65 @@ export const links = [
   },
 ] as const;
 
-export const experiencesData = [
+export const processSteps = [
   {
-    title: "Frontend Developer - freelance",
-    location: "Wrocław, PL",
+    title: "Discovery & scope",
+    location: "15–30 min call",
     description:
-      "I am currently a freelance Frontend Developer having worked on multiple real-life projects.",
+      "We clarify goals, audience, pages/features, content needs, and success metrics. You’ll leave with a clear plan and next steps.",
     icon: React.createElement(FaReact),
-    date: "2022 - present",
+    date: "Step 1",
   },
   {
-    title: "Junior Frontend Developer - Internship",
-    location: "Wrocław, PL",
+    title: "Design & content",
+    location: "Fast iterations",
     description:
-      "I worked as a front-end developer for administration application for non-profit organization.",
+      "I create a clean, conversion-focused layout and help structure your copy. We iterate quickly until it feels right.",
     icon: React.createElement(FaReact),
-    date: "2021 - 2022",
+    date: "Step 2",
   },
   {
-    title: "Wordpress Blog",
-    location: "Wrocław, PL",
+    title: "Build & integrate",
+    location: "Next.js / WordPress",
     description:
-      "I created a Blog page from scratch using Wordpress for my company while being a Marketing Manager.",
+      "Implementation with responsive UI, performance best practices, and any integrations you need (forms, analytics, CMS).",
+    icon: React.createElement(FaReact),
+    date: "Step 3",
+  },
+  {
+    title: "Launch & support",
+    location: "Smooth handoff",
+    description:
+      "Production deploy, basic SEO setup, and a short support window for fixes and tweaks after launch.",
     icon: React.createElement(BsWordpress),
-    date: "2021 - 2022",
+    date: "Step 4",
+  },
+] as const;
+
+export const servicesData = [
+  {
+    title: "Landing pages that convert",
+    description:
+      "Fast, modern landing pages with clear messaging, strong CTAs, and great mobile UX.",
+    bullets: ["Next.js + Tailwind", "Performance optimized", "Analytics-ready"],
+  },
+  {
+    title: "Business websites",
+    description:
+      "Multi-page sites for small businesses and professionals—clean, trustworthy, and easy to maintain.",
+    bullets: ["Responsive UI", "Basic SEO setup", "Content structure help"],
+  },
+  {
+    title: "Web app UI & front-end",
+    description:
+      "Polished React UIs, reusable components, and smooth interactions for product teams.",
+    bullets: ["TypeScript", "Component systems", "UX-focused iterations"],
+  },
+  {
+    title: "WordPress builds & fixes",
+    description:
+      "If you need WordPress (including WooCommerce), I can build, improve, or rescue an existing site.",
+    bullets: ["Theme setup", "Performance fixes", "Content edits"],
   },
 ] as const;
 
