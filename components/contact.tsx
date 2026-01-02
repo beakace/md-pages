@@ -33,13 +33,12 @@ export default function Contact() {
       />
       <SectionHeading>Kontakt</SectionHeading>
 
-      <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Napisz, czego potrzebujesz — odpiszę z propozycją, zakresem i wstępną
-        wyceną. Możesz też napisać na{" "}
+      <p className="text-gray-700 -mt-6 leading-8 dark:text-white/80">
+        Skontaktuj się ze mną, tak jak Ci wygodnie - porozmawiajmy o Twoich potrzebach i ustalmy wspólnie najlepsze rozwiązanie. <br /> Możesz też napisać na{" "}
         <a className="underline" href="mailto:michaldziuba26@gmail.com">
           michaldziuba26@gmail.com
         </a>{" "}
-        lub umówić rozmowę 30 min przez{" "}
+        lub umówić spotkanie Google Meet przez{" "}
         <a
           className="underline"
           href="https://calendly.com/michaldz/30min"
