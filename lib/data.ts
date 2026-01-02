@@ -137,7 +137,7 @@ export const projectsData = [
   {
     title: "Wzrok Ok! Sklep",
     description:
-      "Sklep online z naciskiem na czytelną ofertę i wygodne zakupy.",
+      "Sklep online dla innowacyjnej firmy z produktami medycznymi.",
     tags: ["Sklep online", "Oferta", "Zakupy"],
     imageUrl: wzrokOk,
     href: "https://wzrokok.pl/",
@@ -145,7 +145,7 @@ export const projectsData = [
   {
     title: "Nieziemsko",
     description:
-      "Landing page od zera: jasny przekaz, spójny wygląd i szybka realizacja.",
+      "Landing page od zera: jasny przekaz, spójny wygląd..",
     tags: ["Landing page", "Szybka realizacja", "Przekaz"],
     imageUrl: nieziemsko,
     href: "https://nieziemsko.com",
@@ -153,7 +153,7 @@ export const projectsData = [
   {
     title: "Kalkulacja Leasingu",
     description:
-      "Rozbudowany serwis z wieloma podstronami — nastawiony na porównanie ofert i generowanie leadów.",
+      "Rozbudowany serwis z wieloma podstronami - skupiony na porównywaniu ofert i generowaniu leadów.",
     tags: ["Serwis firmowy", "Wiele podstron", "Leady"],
     imageUrl: kalkulacjaLeasingu,
     href: "https://kalkulacjaleasingu.pl",
@@ -161,7 +161,7 @@ export const projectsData = [
   {
     title: "Chordon",
     description:
-      "Narzędzie, które pomaga muzykom tworzyć progresje akordów i podpowiada kolejne kroki.",
+      "Proste narzędzie, które pomaga muzykom tworzyć progresje akordów i inspirować do tworzenia.",
     tags: ["Aplikacja", "Narzędzie", "UX"],
     imageUrl: chordon,
     href: "https://chordon.vercel.app",
