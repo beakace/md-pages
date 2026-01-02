@@ -10,9 +10,9 @@ import ThemeContextProvider from "@/context/theme-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Michał Dziuba | Web Developer",
+  title: "Michał Dziuba | Programista WWW",
   description:
-    "I build fast, modern websites and landing pages that help you get customers. Next.js, React, WordPress.",
+    "Tworzę szybkie, nowoczesne strony i landing page’e, które pomagają lokalnym firmom zdobywać klientów i zapytania.",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="pl" className="!scroll-smooth">
       <body
         className={`${inter.className} relative bg-gray-50 text-gray-950 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90 pt-28 sm:pt-36`}
       >

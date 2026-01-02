@@ -5,7 +5,7 @@ import { processSteps } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { useTheme } from "@/context/theme-context";
 
-interface ExperienceItem {
+interface ProcessItem {
   title: string;
   location: string;
   description: string;
@@ -14,7 +14,7 @@ interface ExperienceItem {
 }
 
 interface TimelineElementProps {
-  item: ExperienceItem;
+  item: ProcessItem;
   theme: string;
 }
 
@@ -58,13 +58,13 @@ const TimelineElement: React.FC<TimelineElementProps> = ({ item, theme }) => (
   </div>
 );
 
-const Process: React.FC = () => {
-  const { ref } = useSectionInView("Process");
+export default function Proces() {
+  const { ref } = useSectionInView("Proces");
   const { theme } = useTheme();
 
   return (
     <section id="process" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>Process</SectionHeading>
+      <SectionHeading>Proces</SectionHeading>
       <div className="mt-8">
         {processSteps.map((item, index) => (
           <TimelineElement key={index} item={item} theme={theme} />
@@ -72,6 +72,4 @@ const Process: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default Process;
+}

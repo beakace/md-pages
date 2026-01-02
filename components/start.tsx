@@ -1,16 +1,15 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { HiDownload } from "react-icons/hi";
-import { FaGithubSquare } from "react-icons/fa";
+import { BsArrowRight } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
+import TextRotate from "@/components/fancy/text/text-rotate";
 
-export default function Intro() {
-  const { ref } = useSectionInView("Home", 0.5);
+export default function Start() {
+  const { ref } = useSectionInView("Start", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
@@ -28,8 +27,8 @@ export default function Intro() {
           >
             <Image
               className="rounded-full h-24 w-24 border-[0.35rem] object-cover border-white shadow-xl"
-              src="/portrait-final-michal.png"
-              alt="Portrait"
+              src="/avatar-md.png"
+              alt="Portret"
               width={901}
               height={901}
               priority={true}
@@ -43,13 +42,33 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: "tween", duration: 0.2 }}
       >
-        <span className="font-bold">Hi, I’m Michał.</span> I build fast, modern{" "}
-        <span className="font-bold">websites</span> and{" "}
-        <span className="font-bold">landing pages</span> that help you get
-        customers. I specialize in{" "}
-        <span className="font-bold">Next.js / React</span> and{" "}
-        <span className="font-bold">WordPress</span>, with a strong focus on
-        performance, UX, and clean implementation.
+        <span className="block">
+          <span className="font-bold">Cześć, jestem Michał.</span> Tworzę
+          szybkie, nowoczesne <span className="font-bold">strony</span>, które
+        </span>
+        <span className=" block w-full">
+          <TextRotate
+            as="span"
+            texts={[
+              "napędzają sprzedaż.",
+              "wspierają biznes.",
+              "budują zaufanie.",
+              "ułatwiają życie.",
+              "rozwijają markę.",
+              "robią wrażenie.",
+              "po prostu działają.",
+            ]}
+            mainClassName="inline-flex px-6 bg-gray-900 text-white dark:bg-[#676394]/20 dark:text-white overflow-hidden justify-center rounded-full"
+            staggerFrom={"last"}
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-120%" }}
+            staggerDuration={0.025}
+            splitLevelClassName="overflow-hidden "
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            rotationInterval={3000}
+          />
+        </span>
       </motion.h1>
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -61,46 +80,24 @@ export default function Intro() {
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
           onClick={() => {
-            setActiveSection("Contact");
+            setActiveSection("Kontakt");
             setTimeOfLastClick(Date.now());
           }}
         >
-          Get a quote
+          Poproś o wycenę
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
         <Link
           href="#work"
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
           onClick={() => {
-            setActiveSection("Work");
+            setActiveSection("Realizacje");
             setTimeOfLastClick(Date.now());
           }}
         >
-          See my work
+          Zobacz realizacje
           <BsArrowRight className="opacity-60 group-hover:translate-x-1 transition" />
         </Link>
-        <a
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          href="/CV-Michal-Dziuba-Frontend-Developer-compressed.pdf"
-          download
-        >
-          Download CV
-          <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
-        </a>
-        <a
-          className="bg-white text-gray-700 px-4 py-3 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:text-gray-950 hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:text-white/60 dark:bg-white/10"
-          href="https://www.linkedin.com/in/micha%C5%82-dziuba-34650b183/"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
-        <a
-          className="bg-white text-gray-700 text-[1.35rem] px-4 py-3 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:text-gray-950 hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://github.com/beakace"
-          target="_blank"
-        >
-          <FaGithubSquare />
-        </a>
       </motion.div>
     </section>
   );

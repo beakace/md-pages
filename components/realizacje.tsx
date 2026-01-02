@@ -5,16 +5,16 @@ import Project from "./project";
 import { useSectionInView } from "@/lib/hooks";
 import { Project as ProjectType } from "@/lib/types";
 
-interface ProjectsProps {
+interface RealizacjeProps {
   projects: ProjectType[];
 }
 
-export default function Projects({ projects = [] }: ProjectsProps) {
-  const { ref } = useSectionInView("Work");
+export default function Realizacje({ projects = [] }: RealizacjeProps) {
+  const { ref } = useSectionInView("Realizacje");
 
   return (
     <section ref={ref} id="work" className="scroll-mt-28 mb-28">
-      <SectionHeading>Recent work</SectionHeading>
+      <SectionHeading>Ostatnie realizacje</SectionHeading>
       <div>
         {projects.map((project, index) => (
           <Project key={index} {...project} />
@@ -23,3 +23,5 @@ export default function Projects({ projects = [] }: ProjectsProps) {
     </section>
   );
 }
+
+

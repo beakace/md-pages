@@ -1,7 +1,7 @@
-import Projects from "@/components/projects";
+import Realizacje from "@/components/realizacje";
 import { getProjects } from "@/lib/data";
 
 export default async function ProjectsSection() {
   const projects = await getProjects();
-  return <Projects projects={projects} />;
+  return <Realizacje projects={projects} />;
 }

@@ -1,20 +1,20 @@
-import About from "@/components/about";
+import OMnie from "@/components/o-mnie";
 import Contact from "@/components/contact";
 import SectionDivider from "@/components/section-divider";
-import Intro from "@/components/intro";
+import Start from "@/components/start";
 import ProjectsSection from "@/app/sections/projects-section";
-import Process from "@/components/experience";
-import Services from "@/components/skills";
+import Proces from "@/components/proces";
+import Uslugi from "@/components/uslugi";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-4">
-      <Intro />
+      <Start />
       <SectionDivider />
-      <Services />
+      <Uslugi />
       <ProjectsSection />
-      <Process />
-      <About />
+      <Proces />
+      <OMnie />
       <Contact />
     </main>
   );

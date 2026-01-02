@@ -4,17 +4,15 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
-import SubmitBtn from "./submit-btn";
-import toast from "react-hot-toast";
+import { BsArrowRight } from "react-icons/bs";
 export default function Contact() {
-  const { ref } = useSectionInView("Contact");
+  const { ref } = useSectionInView("Kontakt");
 
   return (
     <motion.section
       id="contact"
       ref={ref}
-      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      className="relative mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
       initial={{
         opacity: 0,
       }}
@@ -28,81 +26,49 @@ export default function Contact() {
         once: true,
       }}
     >
-      <SectionHeading>Contact me</SectionHeading>
+      {/* background blob (to make Contact pop) */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -z-10 -bottom-28 left-1/2 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#dbd7fb] blur-[10rem] sm:h-[32rem] sm:w-[32rem] dark:bg-[#676394]"
+      />
+      <SectionHeading>Kontakt</SectionHeading>
 
       <p className="text-gray-700 -mt-6 dark:text-white/80">
-        Tell me what you want to build. I’ll reply with next steps and a rough
-        estimate. You can also email me at{" "}
+        Napisz, czego potrzebujesz — odpiszę z propozycją, zakresem i wstępną
+        wyceną. Możesz też napisać na{" "}
         <a className="underline" href="mailto:michaldziuba26@gmail.com">
           michaldziuba26@gmail.com
         </a>{" "}
+        lub umówić rozmowę 30 min przez{" "}
+        <a
+          className="underline"
+          href="https://calendly.com/michaldz/30min"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Calendly
+        </a>
         .
       </p>
 
-      <form
-        className="mt-10 flex flex-col"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-          if (error) {
-            toast.error(error);
-            return;
-          }
-
-          toast.success("Message sent successfully");
-        }}
-      >
-        <input
-          className="h-14 px-4 rounded-lg borderBlack transition-all dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
-          name="senderName"
-          type="text"
-          maxLength={200}
-          placeholder="Your name (optional)"
-        />
-        <input
-          className="h-14 px-4 rounded-lg borderBlack transition-all dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
-          name="senderEmail"
-          type="email"
-          required
-          maxLength={500}
-          placeholder="Your email"
-        />
-        <select
-          className="h-14 px-4 rounded-lg borderBlack transition-all my-3 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
-          name="projectType"
-          defaultValue=""
+      <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-2">
+        <a
+          href="mailto:michaldziuba26@gmail.com"
+          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
         >
-          <option value="" disabled>
-            What do you need? (optional)
-          </option>
-          <option value="Landing page">Landing page</option>
-          <option value="Business website">Business website</option>
-          <option value="Web app UI / front-end">Web app UI / front-end</option>
-          <option value="WordPress">WordPress</option>
-          <option value="Not sure yet">Not sure yet</option>
-        </select>
-        <input
-          className="h-14 px-4 rounded-lg borderBlack transition-all dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
-          name="budget"
-          type="text"
-          maxLength={200}
-          placeholder="Budget range (optional)"
-        />
-        <input
-          className="h-14 px-4 rounded-lg borderBlack transition-all my-3 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
-          name="timeline"
-          type="text"
-          maxLength={200}
-          placeholder="Timeline / deadline (optional)"
-        />
-        <textarea
-          className="h-52 rounded-lg borderBlack p-4 transition-all dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 dark:text-black/70 dark:outline-none"
-          name="message"
-          placeholder="Briefly describe what you need (goals, pages/features, links/examples, etc.)"
-          required
-          maxLength={5000}
-        />
-        <SubmitBtn />
-      </form>
+          Napisz maila
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+        </a>
+        <a
+          href="https://calendly.com/michaldz/30min"
+          target="_blank"
+          rel="noreferrer"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
+        >
+          Umów rozmowę 30 min
+          <BsArrowRight className="opacity-60 group-hover:translate-x-1 transition" />
+        </a>
+      </div>
     </motion.section>
   );
 }

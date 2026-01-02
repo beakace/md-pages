@@ -1,9 +1,17 @@
 import React from "react";
-import { FaReact } from "react-icons/fa";
+import {
+  FaBolt,
+  FaComments,
+  FaBuilding,
+  FaPencilRuler,
+  FaRocket,
+  FaHandshake,
+  FaShoppingCart,
+  FaWrench,
+} from "react-icons/fa";
 import alma from "@/public/alma-placeholder.png";
 import kalkulacjaLeasingu from "@/public/kalkulacjaleasingu.pl.png";
 import searchGithub from "@/public/search-github-card.png";
-import { BsWordpress } from "react-icons/bs";
 import blogSS24 from "@/public/blog-ss24.png";
 import nieziemsko from "@/public/nieziemsko.png";
 import chordon from "@/public/chordon-app.png";
@@ -13,90 +21,107 @@ import saraStudio from "@/public/sarastudiowokalne.png";
 
 export const links = [
   {
-    name: "Home",
+    name: "Start",
     hash: "#home",
   },
   {
-    name: "Services",
+    name: "Usługi",
     hash: "#services",
   },
   {
-    name: "Work",
+    name: "Realizacje",
     hash: "#work",
   },
   {
-    name: "Process",
+    name: "Proces",
     hash: "#process",
   },
   {
-    name: "About",
+    name: "O mnie",
     hash: "#about",
   },
   {
-    name: "Contact",
+    name: "Kontakt",
     hash: "#contact",
   },
 ] as const;
 
 export const processSteps = [
   {
-    title: "Discovery & scope",
-    location: "15–30 min call",
+    title: "Rozpoznanie & plan",
+    location: "Rozmowa 15–30 min",
     description:
-      "We clarify goals, audience, pages/features, content needs, and success metrics. You’ll leave with a clear plan and next steps.",
-    icon: React.createElement(FaReact),
-    date: "Step 1",
+      "Krótka rozmowa, w której poznaję Twój biznes i cele strony. Ustalamy, co ma się na niej znaleźć, do kogo ma trafiać i jaki efekt ma przynieść. Po rozmowie masz jasny plan i kolejne kroki.",
+    icon: React.createElement(FaComments),
+    date: "Krok 1",
   },
   {
-    title: "Design & content",
-    location: "Fast iterations",
+    title: "Projekt & treści",
+    location: "Szybkie iteracje",
     description:
-      "I create a clean, conversion-focused layout and help structure your copy. We iterate quickly until it feels right.",
-    icon: React.createElement(FaReact),
-    date: "Step 2",
+      "Projektuję prosty, nowoczesny układ nastawiony na kontakt z klientem. Pomagam uporządkować treści - nawet jeśli zaczynamy od zera. Wprowadzamy szybkie poprawki, aż wszystko będzie czytelne i spójne.",
+    icon: React.createElement(FaPencilRuler),
+    date: "Krok 2",
   },
   {
-    title: "Build & integrate",
-    location: "Next.js / WordPress",
+    title: "Wdrożenie & funkcje",
+    location: "Wersja testowa + poprawki",
     description:
-      "Implementation with responsive UI, performance best practices, and any integrations you need (forms, analytics, CMS).",
-    icon: React.createElement(FaReact),
-    date: "Step 3",
+      "Składam gotową stronę: szybką, czytelną i dobrze działającą na telefonach. Dodajemy potrzebne elementy, takie jak sklep, formularz kontaktowy, mapa dojazdu itd.",
+    icon: React.createElement(FaRocket),
+    date: "Krok 3",
   },
   {
-    title: "Launch & support",
-    location: "Smooth handoff",
+    title: "Publikacja & wsparcie",
+    location: "Sprawne przekazanie",
     description:
-      "Production deploy, basic SEO setup, and a short support window for fixes and tweaks after launch.",
-    icon: React.createElement(BsWordpress),
-    date: "Step 4",
+      "Publikuję stronę i wykonuję podstawowe ustawienia widoczności w Google. Po starcie masz krótkie wsparcie na ewentualne poprawki, żeby wszystko działało tak, jak powinno.",
+    icon: React.createElement(FaHandshake),
+    date: "Krok 4",
   },
+  
 ] as const;
 
 export const servicesData = [
   {
-    title: "Landing pages that convert",
+    title: "Landing page’e, które sprzedają",
     description:
-      "Fast, modern landing pages with clear messaging, strong CTAs, and great mobile UX.",
-    bullets: ["Next.js + Tailwind", "Performance optimized", "Analytics-ready"],
+      "Szybkie, nowoczesne landing page’e z jasnym przekazem, mocnym CTA i świetnym doświadczeniem na mobile.",
+    icon: React.createElement(FaBolt, { className: "text-xl" }),
+    bullets: [
+      "Jasna oferta i przekaz",
+      "Szybkie ładowanie",
+      "CTA + formularz kontaktu",
+    ],
   },
   {
-    title: "Business websites",
+    title: "Strony firmowe",
     description:
-      "Multi-page sites for small businesses and professionals—clean, trustworthy, and easy to maintain.",
-    bullets: ["Responsive UI", "Basic SEO setup", "Content structure help"],
+      "Profesjonalne serwisy dla firm i specjalistów - schludne, wiarygodne i łatwe w utrzymaniu.",
+    icon: React.createElement(FaBuilding, { className: "text-xl" }),
+    bullets: [
+      "Wiarygodny wizerunek",
+      "Przejrzysta struktura",
+      "Widoczność w Google (podstawy)",
+    ],
   },
   {
-    title: "Web app UI & front-end",
+    title: "Ulepszenia istniejącej strony",
     description:
-      "Polished React UIs, reusable components, and smooth interactions for product teams.",
-    bullets: ["TypeScript", "Component systems", "UX-focused iterations"],
+      "Jeśli masz już stronę, ale nie działa tak jak powinna: poprawię szybkość, czytelność oferty i ścieżkę do kontaktu.",
+    icon: React.createElement(FaWrench, { className: "text-xl" }),
+    bullets: ["Więcej zapytań", "Lepsze UX", "Szybsze ładowanie"],
   },
   {
-    title: "WordPress builds & fixes",
+    title: "Sklepy internetowe",
     description:
-      "If you need WordPress (including WooCommerce), I can build, improve, or rescue an existing site.",
-    bullets: ["Theme setup", "Performance fixes", "Content edits"],
+      "Dla firm, które chcą pokazać ofertę i produkty w czytelny sposób - z naciskiem na prostą obsługę i konwersję.",
+    icon: React.createElement(FaShoppingCart, { className: "text-xl" }),
+    bullets: [
+      "Czytelna prezentacja oferty",
+      "Wygodna na telefonie",
+      "Szybkie wdrożenie",
+    ],
   },
 ] as const;
 
@@ -104,84 +129,54 @@ export const projectsData = [
   {
     title: "Sara Studio Wokalne",
     description:
-      "Landing page for a vocal coach. Designed and developed by me.",
-    tags: ["React", "Next.js", "Tailwind"],
+      "Landing page dla trenerki wokalnej. Projekt i wdrożenie po mojej stronie.",
+    tags: ["Landing page", "Usługi lokalne", "Konwersja"],
     imageUrl: saraStudio,
     href: "https://www.sarastudiowokalne.pl/",
   },
   {
     title: "Wzrok Ok! Sklep",
     description:
-      "Ecommerce shop built on WordPress with a focus on eye care products.",
-    tags: ["Wordpress", "WooCommerce"],
+      "Sklep online z naciskiem na czytelną ofertę i wygodne zakupy.",
+    tags: ["Sklep online", "Oferta", "Zakupy"],
     imageUrl: wzrokOk,
     href: "https://wzrokok.pl/",
   },
   {
     title: "Nieziemsko",
     description:
-      "I developed a landing page from scratch for an organization using Next.js. The project demanded swift and efficient work, and I am pleased that I was able to deliver the final product in a short timeframe.",
-    tags: ["React", "Next.js", "Tailwind"],
+      "Landing page od zera: jasny przekaz, spójny wygląd i szybka realizacja.",
+    tags: ["Landing page", "Szybka realizacja", "Przekaz"],
     imageUrl: nieziemsko,
     href: "https://nieziemsko.com",
   },
   {
     title: "Kalkulacja Leasingu",
     description:
-      "I coded the entire front-end of a website for a company specializing in lease comparisons. It included numerous subpages, requiring significant effort and a strong command of CSS and Next.js.",
-    tags: ["React", "Next.js", "Tailwind"],
+      "Rozbudowany serwis z wieloma podstronami — nastawiony na porównanie ofert i generowanie leadów.",
+    tags: ["Serwis firmowy", "Wiele podstron", "Leady"],
     imageUrl: kalkulacjaLeasingu,
     href: "https://kalkulacjaleasingu.pl",
   },
   {
     title: "Chordon",
     description:
-      "A chord progression generator that helps musicians create unique progressions. Integrated with the Hooktheory API for music theory analysis and suggestions.",
-    tags: ["React", "Next.js", "Tailwind", "Framer Motion", "Hooktheory API"],
+      "Narzędzie, które pomaga muzykom tworzyć progresje akordów i podpowiada kolejne kroki.",
+    tags: ["Aplikacja", "Narzędzie", "UX"],
     imageUrl: chordon,
     href: "https://chordon.vercel.app",
   },
-  {
-    title: "Admin App",
-    description:
-      "Admin app for organizers of non-profit conference. I developed most of it and the app is currently in use in real life.",
-    tags: ["React", "TypeScript", "Remix", "Material UI", "Prisma"],
-    imageUrl: alma,
-    href: "https://github.com/beakace/alma-admin-app",
-  },
-  {
-    title: "Search Github",
-    description:
-      "App for searching github repositories. My first real react app not built with tutorials. This was my internship entry assignment.",
-    tags: ["React", "Material UI", "TypeScript"],
-    imageUrl: searchGithub,
-    href: "https://search-github-black.vercel.app/",
-  },
-  {
-    title: "Blog Sun Seasons 24",
-    description:
-      "I build this blog page on Wordpress from scratch as a side job for my company. This sparked my interest in Frontend Development",
-    tags: ["Wordpress"],
-    imageUrl: blogSS24,
-    href: "https://blog.sunseasons24.pl/",
-  },
+
+
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Remix",
-  "ERB",
-  "Wordpress",
-  "Git",
-  "Tailwind",
-  "MaterialUI",
-  "Prisma",
-  "Framer Motion",
+  "Szybkość i płynność działania",
+  "Nowoczesny wygląd i spójny branding",
+  "Jasna oferta + mocne CTA",
+  "Wersja mobile dopięta na 100%",
+  "Podstawy widoczności w Google",
+  "Mierzenie zapytań i kontaktów",
 ] as const;
 
 export async function getProjects() {
