@@ -64,7 +64,7 @@ export default function Proces() {
 
   return (
     <section id="process" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>Proces</SectionHeading>
+      <SectionHeading>Przykładowy Proces</SectionHeading>
       <div className="mt-8">
         {processSteps.map((item, index) => (
           <TimelineElement key={index} item={item} theme={theme} />

@@ -64,7 +64,7 @@ export default function Contact() {
           rel="noreferrer"
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
         >
-          Umów rozmowę 30 min
+          Umów Google Meet
           <BsArrowRight className="opacity-60 group-hover:translate-x-1 transition" />
         </a>
       </div>
