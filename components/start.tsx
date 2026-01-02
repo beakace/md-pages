@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { motion } from "motion/react";
+import { LayoutGroup, motion } from "motion/react";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
@@ -44,34 +44,38 @@ export default function Start() {
       >
         <span className="block">
           <span className="font-bold">Cześć, jestem Michał.</span> Tworzę
-          szybkie, nowoczesne <span className="font-bold">strony</span>, które
+          szybkie, nowoczesne strony, które
         </span>
-        <span className=" block w-full">
-          <TextRotate
-            as="span"
-            texts={[
-              "napędzają sprzedaż.",
-              "wspierają biznes.",
-              "budują zaufanie.",
-              "ułatwiają życie.",
-              "rozwijają markę.",
-              "robią wrażenie.",
-              "po prostu działają.",
-            ]}
-            mainClassName="inline-flex px-6 bg-gray-900 text-white dark:bg-[#676394]/20 dark:text-white overflow-hidden justify-center rounded-full"
-            staggerFrom={"last"}
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-120%" }}
-            staggerDuration={0.025}
-            splitLevelClassName="overflow-hidden "
-            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            rotationInterval={3000}
-          />
-        </span>
+        {/* Keep the rotator on its own line, but use LayoutGroup+layout like the demo
+            so the background size animates smoothly instead of snapping. */}
+        <LayoutGroup>
+          <motion.p className=" flex justify-center whitespace-pre" layout>
+            <TextRotate
+              as="span"
+              texts={[
+                "napędzają sprzedaż.",
+                "wspierają biznes.",
+                "budują zaufanie.",
+                "ułatwiają życie.",
+                "rozwijają markę.",
+                "robią wrażenie.",
+                "po prostu działają.",
+              ]}
+              mainClassName="text-white px-6 bg-gray-900 dark:bg-[#676394]/20 dark:text-white overflow-hidden py-0.5 justify-center rounded-full whitespace-pre"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={3000}
+            />
+          </motion.p>
+        </LayoutGroup>
       </motion.h1>
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+        className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4 text-lg font-medium"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
@@ -84,7 +88,7 @@ export default function Start() {
             setTimeOfLastClick(Date.now());
           }}
         >
-          Poproś o wycenę
+          Umów rozmowę
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
         <Link

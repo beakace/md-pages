@@ -25,17 +25,15 @@ export default function OMnie() {
       </p>
       <p className="mb-3">
         Moje doświadczenie w <span className="font-medium">marketingu</span>{" "}
-        sprawia, że patrzę szerzej niż „sam kod” — liczą się przekaz, flow
+        sprawia, że patrzę szerzej niż „sam kod” - liczą się przekaz, flow
         użytkownika i konwersja. Pomagam uporządkować ofertę, dobrać strukturę
         strony i zaplanować elementy, które mają realnie zwiększać liczbę
         zapytań.
       </p>
       <p>
         Jeśli potrzebujesz rzetelnego developera, który jasno komunikuje się i
-        szybko dowozi — chętnie pomogę.
+        szybko dowozi - chętnie pomogę.
       </p>
     </motion.section>
   );
 }
-
-
