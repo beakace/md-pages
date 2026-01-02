@@ -135,6 +135,14 @@ export const projectsData = [
     href: "https://www.sarastudiowokalne.pl/",
   },
   {
+    title: "Kalkulacja Leasingu",
+    description:
+      "Rozbudowany serwis z wieloma podstronami - skupiony na porównywaniu ofert i generowaniu leadów.",
+    tags: ["Serwis firmowy", "Wiele podstron", "Pozyskiwanie klientów"],
+    imageUrl: kalkulacjaLeasingu,
+    href: "https://kalkulacjaleasingu.pl",
+  },
+  {
     title: "Wzrok Ok! Sklep",
     description:
       "Sklep online dla innowacyjnej firmy z produktami medycznymi.",
@@ -145,19 +153,12 @@ export const projectsData = [
   {
     title: "Nieziemsko",
     description:
-      "Landing page od zera: jasny przekaz, spójny wygląd..",
+      "Landing page od zera: jasny przekaz, spójny wygląd.",
     tags: ["Landing page", "Atrakcyjny design", "CTA"],
     imageUrl: nieziemsko,
     href: "https://nieziemsko.com",
   },
-  {
-    title: "Kalkulacja Leasingu",
-    description:
-      "Rozbudowany serwis z wieloma podstronami - skupiony na porównywaniu ofert i generowaniu leadów.",
-    tags: ["Serwis firmowy", "Wiele podstron", "Pozyskiwanie klientów"],
-    imageUrl: kalkulacjaLeasingu,
-    href: "https://kalkulacjaleasingu.pl",
-  },
+
   {
     title: "Chordon",
     description:
