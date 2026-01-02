@@ -130,7 +130,7 @@ export const projectsData = [
     title: "Sara Studio Wokalne",
     description:
       "Landing page dla trenerki wokalnej. Projekt i wdrożenie po mojej stronie.",
-    tags: ["Landing page", "Usługi lokalne", "Konwersja"],
+    tags: ["Landing page", "Wizytówka"],
     imageUrl: saraStudio,
     href: "https://www.sarastudiowokalne.pl/",
   },
@@ -146,7 +146,7 @@ export const projectsData = [
     title: "Nieziemsko",
     description:
       "Landing page od zera: jasny przekaz, spójny wygląd..",
-    tags: ["Landing page", "Szybka realizacja", "Przekaz"],
+    tags: ["Landing page", "Atrakcyjny design", "CTA"],
     imageUrl: nieziemsko,
     href: "https://nieziemsko.com",
   },
@@ -154,7 +154,7 @@ export const projectsData = [
     title: "Kalkulacja Leasingu",
     description:
       "Rozbudowany serwis z wieloma podstronami - skupiony na porównywaniu ofert i generowaniu leadów.",
-    tags: ["Serwis firmowy", "Wiele podstron", "Leady"],
+    tags: ["Serwis firmowy", "Wiele podstron", "Pozyskiwanie klientów"],
     imageUrl: kalkulacjaLeasingu,
     href: "https://kalkulacjaleasingu.pl",
   },
@@ -162,7 +162,7 @@ export const projectsData = [
     title: "Chordon",
     description:
       "Proste narzędzie, które pomaga muzykom tworzyć progresje akordów i inspirować do tworzenia.",
-    tags: ["Aplikacja", "Narzędzie", "UX"],
+    tags: ["Aplikacja", "Narzędzie", "Muzyka"],
     imageUrl: chordon,
     href: "https://chordon.vercel.app",
   },
