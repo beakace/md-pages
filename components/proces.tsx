@@ -63,8 +63,12 @@ export default function Proces() {
   const { theme } = useTheme();
 
   return (
-    <section id="process" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
-      <SectionHeading>Przykładowy Proces</SectionHeading>
+    <section
+      id="process"
+      ref={ref}
+      className="scroll-mt-28 mb-28 sm:mb-40 w-[min(100%,53rem)]"
+    >
+      <SectionHeading>Proces</SectionHeading>
       <div className="mt-8">
         {processSteps.map((item, index) => (
           <TimelineElement key={index} item={item} theme={theme} />

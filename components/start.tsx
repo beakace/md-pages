@@ -61,7 +61,7 @@ export default function Start() {
                 "robią wrażenie.",
                 "po prostu działają.",
               ]}
-              mainClassName="text-white px-6 bg-gray-900 dark:bg-[#676394]/20 dark:text-white overflow-hidden py-0.5 justify-center rounded-full whitespace-pre"
+              mainClassName="text-white px-6 bg-gray-900 dark:text-white overflow-hidden py-0.5 justify-center rounded-full whitespace-pre"
               staggerFrom={"last"}
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -88,20 +88,18 @@ export default function Start() {
             setTimeOfLastClick(Date.now());
           }}
         >
-          Umów rozmowę
+          Poproś o wycenę
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
-        <Link
-          href="#work"
+        <a
+          href="https://calendly.com/michaldz/30min"
+          target="_blank"
+          rel="noreferrer"
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
-          onClick={() => {
-            setActiveSection("Realizacje");
-            setTimeOfLastClick(Date.now());
-          }}
         >
-          Zobacz realizacje
+          Umów rozmowę
           <BsArrowRight className="opacity-60 group-hover:translate-x-1 transition" />
-        </Link>
+        </a>
       </motion.div>
     </section>
   );

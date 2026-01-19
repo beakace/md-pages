@@ -18,7 +18,8 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
-  const [theme, setTheme] = useState<Theme>("light");
+  // Default to dark. Light mode is only enabled if the user explicitly chooses it.
+  const [theme, setTheme] = useState<Theme>("dark");
 
   const toggleTheme = () => {
     if (theme === "light") {
@@ -35,16 +36,15 @@ export default function ThemeContextProvider({
   useEffect(() => {
     const localTheme = window.localStorage.getItem("theme") as Theme | null;
 
-    if (localTheme) {
-      setTheme(localTheme);
-
-      if (localTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      setTheme("dark");
-      document.documentElement.classList.add("dark");
+    if (localTheme === "light") {
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
+      return;
     }
+
+    // Default: dark
+    setTheme("dark");
+    document.documentElement.classList.add("dark");
   }, []);
 
   return (

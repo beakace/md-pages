@@ -14,7 +14,7 @@ import kalkulacjaLeasingu from "@/public/kalkulacjaleasingu.pl.png";
 import searchGithub from "@/public/search-github-card.png";
 import blogSS24 from "@/public/blog-ss24.png";
 import nieziemsko from "@/public/nieziemsko.png";
-import chordon from "@/public/chordon-app.png";
+import czystotu from "@/public/czystotuwroclaw.png";
 // Local data source only – no Sanity client
 import wzrokOk from "@/public/wzrokok.png";
 import saraStudio from "@/public/sarastudiowokalne.png";
@@ -25,13 +25,14 @@ export const links = [
     hash: "#home",
   },
   {
-    name: "Usługi",
-    hash: "#services",
-  },
-  {
     name: "Realizacje",
     hash: "#work",
   },
+  {
+    name: "Usługi",
+    hash: "#services",
+  },
+
   {
     name: "Proces",
     hash: "#process",
@@ -127,9 +128,17 @@ export const servicesData = [
 
 export const projectsData = [
   {
+    title: "CzystoTu",
+    description:
+      "Strona dla firmy sprzątającej z Wrocławia. Prosty układ + mocne CTA, żeby szybko zamieniać odwiedziny w zapytania.",
+    tags: ["Landing page", "Formularz kontaktowy", "Wizytówka"],
+    imageUrl: czystotu,
+    href: "https://www.czystotuwroclaw.pl/",
+  },
+  {
     title: "Sara Studio Wokalne",
     description:
-      "Landing page dla trenerki wokalnej. Projekt i wdrożenie po mojej stronie.",
+      "Strona dla trenerki wokalnej. Czytelna oferta i szybki kontakt - tak, żeby łatwo było umówić lekcję.",
     tags: ["Landing page", "Wizytówka"],
     imageUrl: saraStudio,
     href: "https://www.sarastudiowokalne.pl/",
@@ -137,7 +146,7 @@ export const projectsData = [
   {
     title: "Kalkulacja Leasingu",
     description:
-      "Rozbudowany serwis z wieloma podstronami - skupiony na porównywaniu ofert i generowaniu leadów.",
+      "Rozbudowany serwis dla firmy z branży leasingowej. Struktura pod leady: porównanie oferty, jasne komunikaty i ścieżka do kontaktu.",
     tags: ["Serwis firmowy", "Wiele podstron", "Pozyskiwanie klientów"],
     imageUrl: kalkulacjaLeasingu,
     href: "https://kalkulacjaleasingu.pl",
@@ -145,7 +154,7 @@ export const projectsData = [
   {
     title: "Wzrok Ok! Sklep",
     description:
-      "Sklep online dla innowacyjnej firmy z produktami medycznymi.",
+      "Sklep internetowy dla firmy z produktami medycznymi. Przejrzysta prezentacja produktów i wygodne zakupy na telefonie.",
     tags: ["Sklep online", "Oferta", "Zakupy"],
     imageUrl: wzrokOk,
     href: "https://wzrokok.pl/",
@@ -158,16 +167,6 @@ export const projectsData = [
     imageUrl: nieziemsko,
     href: "https://nieziemsko.com",
   },
-
-  {
-    title: "Chordon",
-    description:
-      "Proste narzędzie, które pomaga muzykom tworzyć progresje akordów i inspirować do tworzenia.",
-    tags: ["Aplikacja", "Narzędzie", "Muzyka"],
-    imageUrl: chordon,
-    href: "https://chordon.vercel.app",
-  },
-
 
 ] as const;
 
