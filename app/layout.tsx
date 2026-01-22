@@ -22,10 +22,8 @@ export const metadata = {
     locale: "pl_PL",
     images: [
       {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Michał Dziuba",
+        url: "/mdpages.pl.png",
+        alt: "mdpages.pl — Michał Dziuba",
       },
     ],
   },
@@ -34,7 +32,7 @@ export const metadata = {
     title: "Michał Dziuba | Strony internetowe",
     description:
       "Tworzę szybkie, nowoczesne strony i landing page’e, które pomagają lokalnym firmom zdobywać klientów i zapytania.",
-    images: ["/opengraph-image"],
+    images: ["/mdpages.pl.png"],
   },
 };
 
