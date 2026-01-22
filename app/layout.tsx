@@ -10,9 +10,31 @@ import ThemeContextProvider from "@/context/theme-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Michał Dziuba | Programista WWW",
+  title: "Michał Dziuba | Strony internetowe",
   description:
     "Tworzę szybkie, nowoczesne strony i landing page’e, które pomagają lokalnym firmom zdobywać klientów i zapytania.",
+  openGraph: {
+    title: "Michał Dziuba | Strony internetowe",
+    description:
+      "Tworzę szybkie, nowoczesne strony i landing page’e, które pomagają lokalnym firmom zdobywać klientów i zapytania.",
+    type: "website",
+    locale: "pl_PL",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Michał Dziuba",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Michał Dziuba | Strony internetowe",
+    description:
+      "Tworzę szybkie, nowoczesne strony i landing page’e, które pomagają lokalnym firmom zdobywać klientów i zapytania.",
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({
