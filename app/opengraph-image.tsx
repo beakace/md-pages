@@ -1,3 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
@@ -10,10 +13,10 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
-  const avatarBuffer = await fetch(
-    new URL("../public/avatar-md.png", import.meta.url)
-  ).then((res) => res.arrayBuffer());
-
+  // Read from /public to keep this route prerenderable (static export) on Vercel.
+  const avatarBuffer = await readFile(
+    path.join(process.cwd(), "public", "avatar-md.png")
+  );
   const avatarBase64 = Buffer.from(avatarBuffer).toString("base64");
   const avatarDataUrl = `data:image/png;base64,${avatarBase64}`;
 
@@ -68,6 +71,7 @@ export default async function OpenGraphImage() {
         >
           <img
             src={avatarDataUrl}
+            alt="Michał Dziuba"
             width={260}
             height={260}
             style={{

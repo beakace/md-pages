@@ -10,6 +10,7 @@ import ThemeContextProvider from "@/context/theme-context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL("https://mdpages.pl"),
   title: "Michał Dziuba | Strony internetowe",
   description:
     "Tworzę szybkie, nowoczesne strony i landing page’e, które pomagają lokalnym firmom zdobywać klientów i zapytania.",
