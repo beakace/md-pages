@@ -2,7 +2,6 @@
 import { useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
-import { projectsData } from "@/lib/data";
 import { motion } from "framer-motion";
 import { Project as ProjectType } from "@/lib/types";
 
@@ -20,63 +19,62 @@ export default function Project({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
 
   return (
-    <motion.div
+    <motion.article
       ref={ref}
-      style={{
-        scale: scaleProgress,
-        opacity: opacityProgress,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+      style={{ opacity: opacityProgress }}
+      className="mb-16 sm:mb-24 last:mb-0"
     >
-      <section className=" bg-gray-100 max-w-[42rem] border border-black/5 overflow-hidden sm:pr-8 rounded-lg relative sm:h-[20rem] hover:bg-gray-200 transition dark:text-white sm:group-even:pl-8 dark:bg-white/10 dark:hover:bg-white/20">
-        <a href={href} target="_blank">
-          {" "}
-          {imageUrl ? (
-            <div className="sm:hidden">
-              <Image
-                className="w-full h-auto"
-                src={imageUrl}
-                alt={title}
-                quality={90}
-                width={imageWidth}
-                height={imageHeight}
-                sizes="100vw"
-                priority={false}
-              />
-            </div>
-          ) : null}
-          <div className="pt-4 pb-7 px-5 h-full sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col sm:group-even:ml-[18rem]">
-            <h3 className="text-2xl font-semibold">{title}</h3>
-            <p className=" mt-2 leading-relaxed text-gray-700 dark:text-white/70 ">
-              {description}
-            </p>
-            <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-              {tags.map((tag, index) => (
-                <li
-                  className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70 "
-                  key={index}
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
-          </div>
-          {imageUrl ? (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="group block"
+      >
+        {/* Image */}
+        {imageUrl && (
+          <div className="overflow-hidden mb-6">
             <Image
-              className="absolute hidden top-8 sm:block -right-40 w-[28.25rem] rounded-t-lg shadow-2xl group-even:-right-[initial] group-even:-left-40 group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2 group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2  transition group-hover:scale-[1.04]"
+              className="w-full h-auto transition-transform duration-800 ease-out group-hover:scale-[1.02]"
               src={imageUrl}
               alt={title}
-              quality={95}
+              quality={90}
               width={imageWidth}
               height={imageHeight}
-            ></Image>
-          ) : null}
-        </a>
-      </section>
-    </motion.div>
+              sizes="(max-width: 768px) 100vw, 42rem"
+            />
+          </div>
+        )}
+
+        {/* Content */}
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+          <div className="flex-1">
+            <h3 className="font-serif text-xl sm:text-2xl tracking-tight mb-2 group-hover:text-accent transition-colors duration-400">
+              {title}
+              <span className="inline-block ml-2 opacity-0 -translate-x-2 transition-all duration-400 group-hover:opacity-100 group-hover:translate-x-0" aria-hidden="true">
+                →
+              </span>
+            </h3>
+            <p className="text-[15px] leading-relaxed text-muted dark:text-muted-dark max-w-prose">
+              {description}
+            </p>
+          </div>
+
+          {/* Tags as simple text list */}
+          <ul className="flex flex-wrap sm:flex-col sm:items-end gap-2 sm:gap-1 text-xs text-muted dark:text-muted-dark">
+            {tags.map((tag, index) => (
+              <li key={index} className="sm:text-right">
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </a>
+
+      {/* Subtle separator line */}
+      <div className="mt-12 sm:mt-16 h-px bg-black/5 dark:bg-white/5" />
+    </motion.article>
   );
 }

@@ -4,7 +4,7 @@ import React from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { BsArrowRight } from "react-icons/bs";
+
 export default function Contact() {
   const { ref } = useSectionInView("Kontakt");
 
@@ -12,62 +12,58 @@ export default function Contact() {
     <motion.section
       id="contact"
       ref={ref}
-      className="relative mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
-      initial={{
-        opacity: 0,
-      }}
-      whileInView={{
-        opacity: 1,
-      }}
-      transition={{
-        duration: 1,
-      }}
-      viewport={{
-        once: true,
-      }}
+      className="mb-20 sm:mb-28 w-[min(100%,38rem)] text-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      viewport={{ once: true }}
     >
-      {/* background blob (to make Contact pop) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -z-10 -bottom-28 left-1/2 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full bg-[#dbd7fb] blur-[10rem] sm:h-[32rem] sm:w-[32rem] dark:bg-[#676394]"
-      />
       <SectionHeading>Kontakt</SectionHeading>
 
-      <p className="text-gray-700 -mt-6 leading-8 dark:text-white/80">
-        Skontaktuj się ze mną, tak jak Ci wygodnie - porozmawiajmy o Twoich potrzebach i ustalmy wspólnie najlepsze rozwiązanie. <br /> Możesz też napisać na{" "}
-        <a className="underline" href="mailto:michaldziuba26@gmail.com">
-          michaldziuba26@gmail.com
-        </a>{" "}
-        lub umówić spotkanie Google Meet przez{" "}
-        <a
-          className="underline"
-          href="https://calendly.com/michaldz/30min"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Calendly
-        </a>
-        .
+      <p className="text-muted dark:text-muted-dark leading-relaxed mb-10">
+        Porozmawiajmy o Twoich potrzebach i ustalmy wspólnie najlepsze
+        rozwiązanie.
       </p>
 
-      <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-2">
+      {/* Contact options - minimal text links */}
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
         <a
           href="mailto:michaldziuba26@gmail.com"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          className="group inline-flex items-center gap-2 text-[15px] border-b border-accent pb-1 text-[#1a1a1a] dark:text-[#e8e6e3] hover:border-accent/50 transition-colors duration-400"
         >
           Napisz maila
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+          <span
+            className="inline-block transition-transform duration-400 group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            →
+          </span>
         </a>
         <a
           href="https://calendly.com/michaldz/30min"
           target="_blank"
           rel="noreferrer"
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
+          className="group inline-flex items-center gap-2 text-[15px] text-muted dark:text-muted-dark hover:text-[#1a1a1a] dark:hover:text-[#e8e6e3] transition-colors duration-400"
         >
-          Umów Google Meet
-          <BsArrowRight className="opacity-60 group-hover:translate-x-1 transition" />
+          Umów spotkanie
+          <span
+            className="inline-block transition-transform duration-400 group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            →
+          </span>
         </a>
       </div>
+
+      {/* Email address displayed subtly */}
+      <p className="mt-10 text-sm text-muted dark:text-muted-dark">
+        <a
+          href="mailto:michaldziuba26@gmail.com"
+          className="hover:text-[#1a1a1a] dark:hover:text-[#e8e6e3] transition-colors duration-400"
+        >
+          michaldziuba26@gmail.com
+        </a>
+      </p>
     </motion.section>
   );
 }

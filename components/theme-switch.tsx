@@ -2,17 +2,17 @@
 
 import { useTheme } from "@/context/theme-context";
 import React from "react";
-import { BsMoon, BsSun } from "react-icons/bs";
 
 export default function ThemeSwitch() {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <button
-      className="fixed bottom-5 right-5 bg-white w-[3rem] h-[3rem] bg-opacity-80 backdrop-blur-[0.5rem] border border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center hover:scale-[1.15] active:scale-105 transition-all dark:bg-gray-950"
+      className="fixed bottom-6 right-6 text-xs text-muted dark:text-muted-dark hover:text-[#1a1a1a] dark:hover:text-[#e8e6e3] transition-colors duration-400"
       onClick={toggleTheme}
+      aria-label={theme === "light" ? "Włącz tryb ciemny" : "Włącz tryb jasny"}
     >
-      {theme === "light" ? <BsSun /> : <BsMoon />}
+      {theme === "light" ? "ciemny" : "jasny"}
     </button>
   );
 }

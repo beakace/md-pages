@@ -1,12 +1,9 @@
 "use client";
-import Image from "next/image";
 import React from "react";
-import { LayoutGroup, motion } from "motion/react";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
 import { useSectionInView } from "@/lib/hooks";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import TextRotate from "@/components/fancy/text/text-rotate";
 
 export default function Start() {
   const { ref } = useSectionInView("Start", 0.5);
@@ -16,89 +13,68 @@ export default function Start() {
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      className="mb-28 max-w-[42rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
-      <div className="flex items-center justify-center">
-        <div className="relative">
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ type: "tween", duration: 0.2 }}
-          >
-            <Image
-              className="rounded-full h-24 w-24 border-[0.35rem] object-cover border-white shadow-xl"
-              src="/avatar-md.png"
-              alt="Portret"
-              width={901}
-              height={901}
-              priority={true}
-            />
-          </motion.div>
-        </div>
-      </div>
-      <motion.h1
-        className="mb-10 mt-4 px-4 font-medium !leading-[1.5] text-2xl sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: "tween", duration: 0.2 }}
-      >
-        <span className="block">
-          <span className="font-bold">Cześć, jestem Michał.</span> Tworzę
-          szybkie, nowoczesne strony, które
-        </span>
-        {/* Keep the rotator on its own line, but use LayoutGroup+layout like the demo
-            so the background size animates smoothly instead of snapping. */}
-        <LayoutGroup>
-          <motion.p className=" flex justify-center whitespace-pre" layout>
-            <TextRotate
-              as="span"
-              texts={[
-                "napędzają sprzedaż.",
-                "wspierają biznes.",
-                "budują zaufanie.",
-                "ułatwiają życie.",
-                "rozwijają markę.",
-                "robią wrażenie.",
-                "po prostu działają.",
-              ]}
-              mainClassName="text-white px-6 bg-gray-900 dark:text-white overflow-hidden py-0.5 justify-center rounded-full whitespace-pre"
-              staggerFrom={"last"}
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "-120%" }}
-              staggerDuration={0.025}
-              splitLevelClassName="overflow-hidden"
-              transition={{ type: "spring", damping: 30, stiffness: 400 }}
-              rotationInterval={3000}
-            />
-          </motion.p>
-        </LayoutGroup>
-      </motion.h1>
       <motion.div
-        className="flex flex-col sm:flex-row items-center justify-center gap-3 px-4 text-lg font-medium"
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1 }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        {/* Small intro marker */}
+        <p className="text-sm text-muted dark:text-muted-dark tracking-wide mb-6">
+          Michał Dziuba — web developer
+        </p>
+
+        {/* Main headline - editorial serif */}
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl tracking-tight leading-[1.15] mb-8">
+          Strony internetowe
+          <br />
+          <span className="italic">po ludzku</span>
+        </h1>
+
+        {/* Subheadline */}
+        <p className="text-lg sm:text-xl text-muted dark:text-muted-dark leading-relaxed max-w-[32rem] mx-auto mb-12">
+          Tworzę szybkie, czytelne strony dla lokalnych firm — bez marketingowej
+          nowomowy i zbędnych komplikacji.
+        </p>
+      </motion.div>
+
+      {/* CTA - minimal, text-based */}
+      <motion.div
+        className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <Link
           href="#contact"
-          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          className="group inline-flex items-center gap-2 text-[15px] border-b border-accent pb-1 text-[#1a1a1a] dark:text-[#e8e6e3] hover:border-accent/50 transition-colors duration-400"
           onClick={() => {
             setActiveSection("Kontakt");
             setTimeOfLastClick(Date.now());
           }}
         >
           Poproś o wycenę
-          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
+          <span
+            className="inline-block transition-transform duration-400 group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            →
+          </span>
         </Link>
         <a
           href="https://calendly.com/michaldz/30min"
           target="_blank"
           rel="noreferrer"
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
+          className="group inline-flex items-center gap-2 text-[15px] text-muted dark:text-muted-dark hover:text-[#1a1a1a] dark:hover:text-[#e8e6e3] transition-colors duration-400"
         >
           Umów rozmowę
-          <BsArrowRight className="opacity-60 group-hover:translate-x-1 transition" />
+          <span
+            className="inline-block transition-transform duration-400 group-hover:translate-x-1"
+            aria-hidden="true"
+          >
+            →
+          </span>
         </a>
       </motion.div>
     </section>
