@@ -1,8 +1,6 @@
 import "./globals.css";
 import { Libre_Baskerville, Plus_Jakarta_Sans } from "next/font/google";
-import ActiveSectionContextProvider from "@/context/active-section-context";
 import { Toaster } from "react-hot-toast";
-import ThemeSwitch from "@/components/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 
 const plusJakarta = Plus_Jakarta_Sans({ 
@@ -55,11 +53,8 @@ export default function RootLayout({
         className="font-sans relative bg-[#fafaf9] text-[#1a1a1a] dark:bg-[#0c0c0c] dark:text-[#e8e6e3] antialiased"
       >
         <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            {children}
-            <Toaster position="top-right" />
-            <ThemeSwitch />
-          </ActiveSectionContextProvider>
+          {children}
+          <Toaster position="top-right" />
         </ThemeContextProvider>
       </body>
     </html>
