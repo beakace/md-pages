@@ -20,8 +20,8 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-[#fafaf9] dark:bg-[#0c0c0c] border-b-0 outline-none shadow-none will-change-transform"
-      style={{ backfaceVisibility: "hidden" }}
+      className="fixed -top-4 left-0 right-0 z-50 bg-[#fafaf9] dark:bg-[#0c0c0c] pt-4 border-b-0 outline-none shadow-none will-change-transform"
+      style={{ backfaceVisibility: "hidden", transform: "translateZ(0)" }}
       initial={{ opacity: 0, y: -20 }}
       animate={{
         opacity: visible ? 1 : 0,
@@ -56,7 +56,9 @@ export default function Navbar() {
             onClick={toggleTheme}
             className="p-1.5 text-muted dark:text-muted-dark hover:text-[#1a1a1a] dark:hover:text-[#e8e6e3] transition-colors duration-300 outline-none focus:outline-none focus:ring-0 focus-visible:outline-none"
             style={{ WebkitTapHighlightColor: "transparent" }}
-            aria-label={theme === "light" ? "Włącz tryb ciemny" : "Włącz tryb jasny"}
+            aria-label={
+              theme === "light" ? "Włącz tryb ciemny" : "Włącz tryb jasny"
+            }
           >
             {theme === "light" ? (
               <Moon className="w-4 h-4" />
