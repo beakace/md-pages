@@ -20,8 +20,8 @@ const testimonials = [
   {
     quote:
       "Szybko, sprawnie i bez zbędnego komplikowania. Polecam każdemu, kto ceni swój czas.",
-    author: "Lorem Ipsum",
-    role: "Placeholder, Miasto",
+    author: "Sara",
+    role: "Przedsiębiorca, Wrocław",
     align: "left" as const,
   },
 ];

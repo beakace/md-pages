@@ -2,6 +2,7 @@ import "./globals.css";
 import { Libre_Baskerville, Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import ThemeContextProvider from "@/context/theme-context";
+import CookieConsent from "@/components/CookieConsent";
 
 const plusJakarta = Plus_Jakarta_Sans({ 
   subsets: ["latin", "latin-ext"],
@@ -55,6 +56,7 @@ export default function RootLayout({
         <ThemeContextProvider>
           {children}
           <Toaster position="top-right" />
+          <CookieConsent />
         </ThemeContextProvider>
       </body>
     </html>

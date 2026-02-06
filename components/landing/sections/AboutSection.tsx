@@ -43,7 +43,7 @@ export default function AboutSection() {
             <div className="md:hidden relative w-32 h-32">
               <div className="absolute inset-0 rounded-full bg-accent/10" />
               <Image
-                src="/avatar-45.png"
+                src="/MD.png"
                 alt="Michał Dziuba"
                 width={128}
                 height={128}
@@ -52,12 +52,12 @@ export default function AboutSection() {
             </div>
             {/* Desktop: pełne zdjęcie */}
             <Image
-              src="/avatar-45.png"
+              src="/MD.png"
               alt="Michał Dziuba"
               width={520}
-              height={693}
+              height={520}
               quality={95}
-              className="hidden md:block w-full max-w-[260px] h-auto object-contain"
+              className="hidden md:block rounded-full w-full max-w-[260px] h-auto object-contain"
               sizes="260px"
             />
           </motion.div>
