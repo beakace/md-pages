@@ -23,6 +23,7 @@ export default function HandDrawnUnderline() {
         className="w-full h-full object-cover object-left"
         aria-hidden="true"
         priority
+        quality={60}
       />
     </motion.span>
   );
