@@ -68,8 +68,12 @@ export default function Navbar() {
           </button>
 
           {/* CTA */}
-          <Link
+          <a
             href="#kontakt"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+            }}
             className="group flex items-center gap-2 text-sm font-medium"
           >
             <span className="relative">
@@ -79,7 +83,7 @@ export default function Navbar() {
             <span className="text-accent transition-transform duration-300 group-hover:translate-x-0.5">
               →
             </span>
-          </Link>
+          </a>
         </div>
       </nav>
     </motion.header>
