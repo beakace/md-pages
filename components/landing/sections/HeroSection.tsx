@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import HandDrawnUnderline from "../HandDrawnUnderline";
 import { accentFilter } from "@/lib/animations";
 
@@ -44,15 +43,19 @@ export default function HeroSection() {
           Profesjonalnie, skutecznie i w rozsądnej cenie.
         </p>
 
-        <Link
+        <a
           href="#kontakt"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+          }}
           className="group inline-flex items-center gap-3 text-sm border-b border-accent pb-1 hover:border-accent/50 transition-colors duration-400"
         >
           Porozmawiajmy
           <span className="transition-transform duration-400 group-hover:translate-x-1">
             →
           </span>
-        </Link>
+        </a>
       </motion.div>
     </section>
   );

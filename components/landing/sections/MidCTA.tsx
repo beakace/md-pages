@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function MidCTA() {
   return (
@@ -16,15 +15,19 @@ export default function MidCTA() {
         <p className="font-serif text-xl sm:text-2xl md:text-3xl italic leading-[1.4] text-muted dark:text-muted-dark mb-8">
           Gotów na nową stronę?
         </p>
-        <Link
+        <a
           href="#kontakt"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+          }}
           className="group inline-flex items-center gap-3 text-base sm:text-lg font-medium border-b-2 border-accent pb-1 hover:border-accent/60 transition-colors duration-300"
         >
           Porozmawiajmy
           <span className="text-accent transition-transform duration-300 group-hover:translate-x-1">
             →
           </span>
-        </Link>
+        </a>
       </motion.div>
     </section>
   );
