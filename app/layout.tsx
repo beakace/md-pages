@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Libre_Baskerville, Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/next";
 import ThemeContextProvider from "@/context/theme-context";
 import CookieConsent from "@/components/CookieConsent";
 
@@ -60,6 +61,7 @@ export default function RootLayout({
           <Toaster position="top-right" />
           <CookieConsent />
         </ThemeContextProvider>
+        <Analytics />
       </body>
     </html>
   );
