@@ -47,7 +47,9 @@ export default function AboutSection() {
                 alt="Michał Dziuba"
                 width={128}
                 height={128}
+                quality={80}
                 className="relative w-full h-full object-cover object-[center_30%] rounded-full"
+                loading="lazy"
               />
             </div>
             {/* Desktop: pełne zdjęcie */}
@@ -56,9 +58,10 @@ export default function AboutSection() {
               alt="Michał Dziuba"
               width={520}
               height={520}
-              quality={95}
+              quality={85}
               className="hidden md:block rounded-full w-full max-w-[260px] h-auto object-contain"
               sizes="260px"
+              loading="lazy"
             />
           </motion.div>
 

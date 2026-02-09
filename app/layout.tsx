@@ -8,6 +8,7 @@ import CookieConsent from "@/components/CookieConsent";
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
   variable: "--font-sans",
+  display: "swap",
 });
 
 const libreBaskerville = Libre_Baskerville({
@@ -15,10 +16,11 @@ const libreBaskerville = Libre_Baskerville({
   weight: ["400", "700"],
   style: ["normal", "italic"],
   variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata = {
-  metadataBase: new URL("https://mdpages.pl"),
+  metadataBase: new URL("https://www.stronypolydzku.pl"),
   title: "Michał Dziuba | Strony internetowe",
   description:
     "Bez agencyjnych sztuczek. Bez przypadkowych szablonów AI. Profesjonalnie, skutecznie i w rozsądnej cenie.",
