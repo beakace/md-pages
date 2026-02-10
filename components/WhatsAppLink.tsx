@@ -4,9 +4,10 @@ import { useState, useEffect, useRef } from "react";
 import Script from "next/script";
 import { useTheme } from "@/context/theme-context";
 import { MessageCircle } from "lucide-react";
+import { SERVICES } from "@/lib/constants";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!;
-const WHATSAPP_NUMBER = "48571374407";
+const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "48571374407";
 
 declare global {
   interface Window {
@@ -50,7 +51,7 @@ export default function WhatsAppLink() {
   return (
     <>
       <Script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        src={SERVICES.turnstileScript}
         onLoad={() => setTurnstileLoaded(true)}
       />
 

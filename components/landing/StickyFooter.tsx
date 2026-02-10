@@ -3,6 +3,7 @@
 import ContactForm from "@/components/ContactForm";
 import WhatsAppLink from "@/components/WhatsAppLink";
 import { accentFilter } from "@/lib/animations";
+import { SITE } from "@/lib/constants";
 
 export default function StickyFooter() {
   return (
@@ -34,7 +35,7 @@ export default function StickyFooter() {
             </p>
             <div className="flex flex-col items-center lg:items-start gap-5 lg:gap-6">
               <a
-                href="https://calendly.com/michaldz/30min"
+                href={SITE.calendly}
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex items-center gap-3 text-[15px] border-b-2 border-accent pb-1.5 text-[#e8e6e3] dark:text-[#1a1a1a] hover:border-accent/70 transition-colors duration-300"
@@ -45,7 +46,7 @@ export default function StickyFooter() {
                 </span>
               </a>
               <a
-                href="mailto:michaldziuba26@gmail.com"
+                href={`mailto:${SITE.email}`}
                 className="group inline-flex items-center gap-3 text-[15px] text-muted-dark dark:text-muted hover:text-[#e8e6e3] dark:hover:text-[#1a1a1a] transition-colors duration-300"
               >
                 Napisz maila

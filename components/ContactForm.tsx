@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Script from "next/script";
 import { Send, CheckCircle2 } from "lucide-react";
 import { useTheme } from "@/context/theme-context";
+import { SERVICES } from "@/lib/constants";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!;
 
@@ -53,56 +54,63 @@ export default function ContactForm() {
     }
   }, [turnstileLoaded, theme]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
-
-    if (!turnstileToken) {
-      setError("Potwierdź proszę, że nie jesteś robotem.");
-      setIsSubmitting(false);
-      return;
+  const resetTurnstile = useCallback(() => {
+    if (widgetIdRef.current) {
+      window.turnstile.reset(widgetIdRef.current);
     }
+    setTurnstileToken(null);
+  }, []);
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: formState.email,
-          message: formState.message,
-          honeypot: formState.honeypot,
-          turnstileToken,
-        }),
-      });
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+      setError(null);
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Nie udało się wysłać wiadomości");
+      if (!turnstileToken) {
+        setError("Potwierdź proszę, że nie jesteś robotem.");
+        setIsSubmitting(false);
+        return;
       }
 
-      setIsSubmitted(true);
-      setFormState({ email: "", message: "", honeypot: "" });
-      setTurnstileToken(null);
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: formState.email,
+            message: formState.message,
+            honeypot: formState.honeypot,
+            turnstileToken,
+          }),
+        });
 
-      if (widgetIdRef.current) {
-        window.turnstile.reset(widgetIdRef.current);
-      }
+        const data = await response.json().catch(() => ({}));
 
-      setTimeout(() => setIsSubmitted(false), 10000);
-    } catch (err) {
-      setError(
-        err instanceof Error ? err.message : "Wystąpił błąd. Spróbuj ponownie.",
-      );
-      if (widgetIdRef.current) {
-        window.turnstile.reset(widgetIdRef.current);
+        if (!response.ok) {
+          throw new Error(
+            data.error || "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
+          );
+        }
+
+        setIsSubmitted(true);
+        setFormState({ email: "", message: "", honeypot: "" });
+        resetTurnstile();
+
+        setTimeout(() => setIsSubmitted(false), 10000);
+      } catch (err) {
+        const message =
+          err instanceof Error
+            ? err.message
+            : "Wystąpił nieoczekiwany błąd. Spróbuj ponownie za chwilę.";
+        setError(message);
+        resetTurnstile();
+      } finally {
+        setIsSubmitting(false);
       }
-      setTurnstileToken(null);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    },
+    [formState, turnstileToken, resetTurnstile],
+  );
 
   if (!TURNSTILE_SITE_KEY) {
     return (
@@ -116,7 +124,7 @@ export default function ContactForm() {
   return (
     <>
       <Script
-        src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+        src={SERVICES.turnstileScript}
         onLoad={() => setTurnstileLoaded(true)}
       />
       <div className="w-full">

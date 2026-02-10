@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { motion, useInView } from "framer-motion";
 
 interface RevealTextProps {
@@ -11,7 +11,7 @@ export default function RevealText({ children }: RevealTextProps) {
   const ref = useRef<HTMLParagraphElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-20%" });
 
-  const words = children.split(" ");
+  const words = useMemo(() => children.split(" "), [children]);
 
   return (
     <p

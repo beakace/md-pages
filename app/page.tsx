@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import ErrorBoundary from "@/components/ErrorBoundary";
 import {
   Navbar,
   LineSeparator,
@@ -39,33 +40,49 @@ export default function Home() {
 
         <LineSeparator />
 
-        <ProblemSection />
+        <ErrorBoundary>
+          <ProblemSection />
+        </ErrorBoundary>
 
         <BigStatement>
           „Zamiast loterii z ogłoszenia, i zamiast biurokracji agencji. Jeden
           człowiek, który dotrzymuje słowa."
         </BigStatement>
 
-        <SolutionSection />
+        <ErrorBoundary>
+          <SolutionSection />
+        </ErrorBoundary>
 
         <LineSeparator delay={0.1} />
 
-        <AudienceSection />
-        <SpectrumSection />
+        <ErrorBoundary>
+          <AudienceSection />
+        </ErrorBoundary>
+        <ErrorBoundary>
+          <SpectrumSection />
+        </ErrorBoundary>
 
         <LineSeparator delay={0.1} />
 
-        <ProjectsSection />
+        <ErrorBoundary>
+          <ProjectsSection />
+        </ErrorBoundary>
 
         <MidCTA />
 
-        <TestimonialsSection />
+        <ErrorBoundary>
+          <TestimonialsSection />
+        </ErrorBoundary>
 
         <LineSeparator delay={0.1} />
 
-        <ProcessSection />
+        <ErrorBoundary>
+          <ProcessSection />
+        </ErrorBoundary>
 
-        <AboutSection />
+        <ErrorBoundary>
+          <AboutSection />
+        </ErrorBoundary>
 
         {/* Spacer for sticky footer reveal */}
         <div className="h-[10vh] sm:h-[15vh] lg:h-[20vh]" />

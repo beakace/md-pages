@@ -2,63 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --accent: #c45a3b;
-    --line-color: rgba(0, 0, 0, 0.08);
-  }
-
-  .dark {
-    --line-color: rgba(255, 255, 255, 0.1);
-  }
-
-  /* Smooth scrolling with reduced motion respect */
-  @media (prefers-reduced-motion: no-preference) {
-    html {
-      scroll-behavior: smooth;
-    }
-  }
-
-  /* Selection color using accent */
-  ::selection {
-    background-color: rgba(196, 90, 59, 0.2);
-  }
+html {
+  --line-color: #e5e7eb;
 }
 
-@layer components {
-  /* Subtle border utility */
-  .border-subtle {
-    @apply border border-black/5 dark:border-white/5;
-  }
-
-  /* Accent line - horizontal rule alternative */
-  .accent-line {
-    @apply h-px bg-accent/30;
-  }
-
-  /* Accent dot - visual punctuation */
-  .accent-dot {
-    @apply inline-block w-1.5 h-1.5 rounded-full bg-accent;
-  }
-
-  /* Editorial link style */
-  .editorial-link {
-    @apply relative inline-block;
-  }
-  .editorial-link::after {
-    content: '';
-    @apply absolute left-0 bottom-0 w-full h-px bg-current opacity-30 transition-opacity duration-300;
-  }
-  .editorial-link:hover::after {
-    @apply opacity-100;
-  }
-
-  /* Hide scrollbar but keep scroll functionality */
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
 }
