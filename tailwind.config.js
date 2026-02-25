@@ -23,6 +23,11 @@ module.exports = {
           light: '#d4705a',
           muted: 'rgba(196, 90, 59, 0.15)',
         },
+        // Tactile redesign colors
+        washi: '#F7F5F0',
+        ink: '#1C1B18',
+        graphite: '#33312E',
+        chalk: '#e8e6e3',
         // Muted text colors
         muted: {
           DEFAULT: '#6b6b6b',

@@ -1,37 +1,40 @@
 "use client";
 
-import { useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "@/context/theme-context";
 import { Sun, Moon } from "lucide-react";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Navbar() {
   const [visible, setVisible] = useState(false);
-  const { scrollY } = useScroll();
   const { theme, toggleTheme } = useTheme();
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    // Show navbar after scrolling past hero (roughly 60vh)
-    const heroHeight = window.innerHeight * 0.6;
-    setVisible(latest > heroHeight);
-  });
+  useEffect(() => {
+    const onScroll = () => {
+      const heroHeight = window.innerHeight * 0.6;
+      setVisible(window.scrollY > heroHeight);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <motion.header
-      className="fixed -top-4 left-0 right-0 z-50 bg-[#fafaf9] dark:bg-[#0c0c0c] pt-4 border-b-0 outline-none shadow-none will-change-transform"
-      style={{ backfaceVisibility: "hidden", transform: "translateZ(0)" }}
-      initial={{ opacity: 0, y: -20 }}
-      animate={{
+    <header
+      className="fixed -top-4 left-0 right-0 z-50 bg-washi dark:bg-surface-dark pt-4 will-change-transform"
+      style={{
+        backfaceVisibility: "hidden",
+        transform: "translateZ(0)",
         opacity: visible ? 1 : 0,
-        y: visible ? 0 : -20,
         pointerEvents: visible ? "auto" : "none",
+        transition: "opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1)",
       }}
-      transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <nav className="px-6 sm:px-10 py-5 flex items-center justify-between border-b-0">
-        {/* Logo - anchor to top */}
+      <nav className="px-6 sm:px-10 py-5 flex items-center justify-between">
         <Link
           href="#"
           onClick={(e) => {
@@ -51,10 +54,9 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-6">
-          {/* Theme toggle - subtle */}
           <button
             onClick={toggleTheme}
-            className="p-1.5 text-muted dark:text-muted-dark hover:text-[#1a1a1a] dark:hover:text-[#e8e6e3] transition-colors duration-300 outline-none focus:outline-none focus:ring-0 focus-visible:outline-none"
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center text-muted dark:text-muted-dark hover:text-ink dark:hover:text-[#e8e6e3] transition-colors duration-300 rounded-full focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-washi dark:focus-visible:ring-offset-surface-dark"
             style={{ WebkitTapHighlightColor: "transparent" }}
             aria-label={
               theme === "light" ? "Włącz tryb ciemny" : "Włącz tryb jasny"
@@ -67,25 +69,21 @@ export default function Navbar() {
             )}
           </button>
 
-          {/* CTA */}
           <a
             href="#kontakt"
             onClick={(e) => {
               e.preventDefault();
               window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
             }}
-            className="group flex items-center gap-2 text-sm font-medium"
+            className="group flex items-center justify-center gap-2 text-sm font-medium bg-ink dark:bg-chalk text-washi dark:text-ink px-5 py-2.5 organic-border hover:bg-ink/90 dark:hover:bg-chalk/90 transition-all duration-300 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-washi dark:focus-visible:ring-offset-surface-dark"
           >
-            <span className="relative">
-              Porozmawiajmy
-              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-            </span>
-            <span className="text-accent transition-transform duration-300 group-hover:translate-x-0.5">
+            Porozmawiajmy
+            <span className="text-accent transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
           </a>
         </div>
       </nav>
-    </motion.header>
+    </header>
   );
 }

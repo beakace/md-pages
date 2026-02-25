@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Libre_Baskerville, Plus_Jakarta_Sans } from "next/font/google";
+import { Caveat, Libre_Baskerville, Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/next";
 import ThemeContextProvider from "@/context/theme-context";
@@ -16,6 +16,12 @@ const libreBaskerville = Libre_Baskerville({
   weight: ["400", "700"],
   style: ["normal", "italic"],
   variable: "--font-serif",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-handwritten",
   display: "swap",
 });
 
@@ -54,10 +60,16 @@ export default function RootLayout({
   return (
     <html
       lang="pl"
-      className={`!scroll-smooth dark ${plusJakarta.variable} ${libreBaskerville.variable}`}
+      className={`!scroll-smooth ${plusJakarta.variable} ${libreBaskerville.variable} ${caveat.variable}`}
       suppressHydrationWarning
     >
-      <body className="font-sans relative bg-[#fafaf9] text-[#1a1a1a] dark:bg-[#0c0c0c] dark:text-[#e8e6e3] antialiased">
+      <body className="font-sans relative bg-washi text-ink dark:bg-surface-dark dark:text-[#e8e6e3] antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm"
+        >
+          Przejdź do treści
+        </a>
         <ThemeContextProvider>
           {children}
           <Toaster position="top-right" />
