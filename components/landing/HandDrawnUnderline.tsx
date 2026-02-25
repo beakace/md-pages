@@ -1,18 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function HandDrawnUnderline() {
   return (
-    <motion.span
+    <span
       className="absolute -bottom-3 sm:-bottom-4 left-0 right-0 h-[12px] sm:h-[16px] pointer-events-none"
-      initial={{ clipPath: "inset(0 100% 0 0)" }}
-      animate={{ clipPath: "inset(0 0% 0 0)" }}
-      transition={{
-        duration: 0.8,
-        delay: 0.9,
-        ease: [0.4, 0, 0.2, 1],
+      style={{
+        clipPath: "inset(0 100% 0 0)",
+        animation: "reveal-right 0.8s 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards",
       }}
     >
       <Image
@@ -25,6 +21,6 @@ export default function HandDrawnUnderline() {
         priority
         quality={75}
       />
-    </motion.span>
+    </span>
   );
 }

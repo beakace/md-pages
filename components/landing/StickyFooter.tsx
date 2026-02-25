@@ -9,9 +9,8 @@ export default function StickyFooter() {
   return (
     <footer
       id="kontakt"
-      className="sticky z-0 bottom-0 left-0 w-full min-h-[70vh] lg:min-h-[60vh] bg-[#0c0c0c] dark:bg-[#fafaf9] flex items-center justify-center scroll-mt-20 overflow-hidden"
+      className="sticky z-0 bottom-0 left-0 w-full min-h-[70vh] lg:min-h-[60vh] bg-ink dark:bg-washi flex items-center justify-center scroll-mt-20 overflow-hidden"
     >
-      {/* Doodle - decorative */}
       <img
         src="/svg/7.svg"
         alt=""
@@ -21,9 +20,8 @@ export default function StickyFooter() {
       />
       <div className="relative w-full max-w-[64rem] mx-auto px-6 sm:px-8 py-12 sm:py-16">
         <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-start">
-          {/* Lewa kolumna: nagłówek + CTA */}
           <div className="text-center lg:text-left">
-            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl uppercase tracking-[0.12em] leading-[1.3] mb-4 lg:mb-6 font-semibold text-[#e8e6e3] dark:text-[#1a1a1a]">
+            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl uppercase tracking-[0.12em] leading-[1.3] mb-4 lg:mb-6 font-semibold text-chalk dark:text-ink">
               Kontakt
             </h2>
             <p className="text-base lg:text-lg text-muted-dark dark:text-muted leading-relaxed mb-8 lg:mb-10 max-w-md mx-auto lg:mx-0 lg:max-w-none">
@@ -38,31 +36,29 @@ export default function StickyFooter() {
                 href={SITE.calendly}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-3 text-[15px] border-b-2 border-accent pb-1.5 text-[#e8e6e3] dark:text-[#1a1a1a] hover:border-accent/70 transition-colors duration-300"
+                className="group inline-flex items-center justify-center gap-3 text-[15px] font-medium bg-chalk dark:bg-ink text-ink dark:text-washi px-6 py-3 organic-border hover:bg-chalk/90 dark:hover:bg-ink/90 transition-all duration-300 active:scale-[0.98] min-h-[44px] focus-visible:ring-2 focus-visible:ring-accent"
               >
                 Umów rozmowę
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                <span className="text-accent transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="group inline-flex items-center gap-3 text-[15px] text-muted-dark dark:text-muted hover:text-[#e8e6e3] dark:hover:text-[#1a1a1a] transition-colors duration-300"
+                className="group inline-flex items-center justify-center gap-3 text-[15px] font-medium border border-chalk/20 dark:border-ink/20 text-chalk dark:text-ink px-6 py-3 organic-border hover:bg-chalk/10 dark:hover:bg-ink/10 transition-all duration-300 active:scale-[0.98] min-h-[44px] focus-visible:ring-2 focus-visible:ring-accent"
               >
                 Napisz maila
-                <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                <span className="text-accent transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
               </a>
             </div>
 
-            {/* WhatsApp - tylko na mobile (gdzie nie ma formularza) */}
             <div className="lg:hidden">
               <WhatsAppLink />
             </div>
           </div>
 
-          {/* Prawa kolumna: formularz - tylko na desktop */}
           <div className="hidden lg:block lg:pl-12 lg:border-l border-white/10 dark:border-black/10">
             <p className="font-sans text-xs uppercase tracking-[0.12em] text-muted-dark dark:text-muted mb-8">
               Wyślij wiadomość
@@ -72,7 +68,6 @@ export default function StickyFooter() {
         </div>
       </div>
 
-      {/* Large decorative text */}
       <span className="absolute bottom-0 left-4 font-serif text-[60px] sm:text-[100px] lg:text-[200px] text-accent/5 leading-none pointer-events-none select-none translate-y-1/4">
         mdpages
       </span>
