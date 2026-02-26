@@ -125,15 +125,15 @@ export default function AudienceSection() {
             <h2 className="font-serif italic text-3xl md:text-4xl text-ink dark:text-chalk leading-tight mb-10">
               Dla kogo jestem<br />najlepszym wyborem
             </h2>
-            <ul className="space-y-6 md:space-y-8 w-full max-w-sm">
+            <ul className="space-y-10 md:space-y-8 w-full max-w-sm">
               {forMe.map((item, i) => (
-                <li key={i} className="audience-yes-item flex items-start md:justify-end gap-5 group">
-                  <span className="md:hidden mt-0.5 shrink-0 w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center">
-                    <svg className="w-3.5 h-3.5 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <li key={i} className="audience-yes-item flex flex-col md:flex-row items-center md:items-start md:justify-end gap-3 md:gap-5 group">
+                  <span className="md:hidden shrink-0 w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center">
+                    <svg className="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path className="audience-check" strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <span className="text-[17px] font-sans text-graphite/80 dark:text-chalk/70 leading-relaxed font-medium group-hover:text-ink dark:group-hover:text-chalk transition-colors">
+                  <span className="text-lg md:text-[17px] font-sans text-graphite/80 dark:text-chalk/70 leading-relaxed font-medium group-hover:text-ink dark:group-hover:text-chalk transition-colors">
                     {item}
                   </span>
                   <span className="hidden md:flex mt-1 shrink-0 w-6 h-6 rounded-full bg-green-500/10 items-center justify-center">
@@ -146,7 +146,7 @@ export default function AudienceSection() {
             </ul>
           </div>
 
-          <div className="md:pl-16 lg:pl-24 flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="md:pl-16 lg:pl-24 flex flex-col items-center md:items-start text-center md:text-left pt-16 md:pt-0 mt-8 md:mt-0 border-t md:border-t-0 border-graphite/10 dark:border-chalk/10 lg:border-none">
             <h2 className="font-serif italic text-3xl md:text-4xl text-ink dark:text-chalk leading-tight mb-10 opacity-60">
               Dla kogo<br />
               <span className="relative inline-block text-accent opacity-100">
@@ -157,16 +157,16 @@ export default function AudienceSection() {
               </span>{" "}
               jestem
             </h2>
-            <ul className="space-y-6 md:space-y-8 w-full max-w-sm">
+            <ul className="space-y-10 md:space-y-8 w-full max-w-sm">
               {notForMe.map((item, i) => (
-                <li key={i} className="audience-no-item flex items-start gap-5 group opacity-70 hover:opacity-100 transition-opacity">
-                  <span className="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center">
-                    <svg className="w-3.5 h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <li key={i} className="audience-no-item flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-5 group opacity-70 hover:opacity-100 transition-opacity">
+                  <span className="mt-0.5 shrink-0 w-8 h-8 md:w-6 md:h-6 rounded-full bg-accent/10 flex items-center justify-center">
+                    <svg className="w-4 h-4 md:w-3.5 md:h-3.5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path className="audience-cross-1" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6" />
                       <path className="audience-cross-2" strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12" />
                     </svg>
                   </span>
-                  <span className="text-[17px] font-sans text-graphite/70 dark:text-chalk/55 leading-relaxed font-medium">
+                  <span className="text-lg md:text-[17px] font-sans text-graphite/70 dark:text-chalk/55 leading-relaxed font-medium">
                     {item}
                   </span>
                 </li>
@@ -175,9 +175,6 @@ export default function AudienceSection() {
           </div>
         </div>
       </div>
-      
-      {/* Bottom Line Separator */}
-      <LineSeparator delay={0.6} />
     </section>
   );
 }

@@ -99,6 +99,92 @@ export default function ProblemSpectrumSection() {
           2.8)
           .from(".spectrum-text-1", { opacity: 0, y: 20, duration: 0.4 }, 2.9);
       });
+
+      mm.add("(max-width: 767px)", () => {
+        // Mobile fallback animations (no pinning)
+        gsap.fromTo(".problem-intro", 
+          { y: 30, opacity: 0 },
+          {
+            scrollTrigger: { trigger: ".problem-content", start: "top 80%" },
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+          }
+        );
+
+        [0, 1, 2].forEach((i) => {
+          gsap.fromTo(`.pain-line-${i}`, 
+            { scaleX: 0 },
+            {
+              scrollTrigger: { trigger: `.pain-line-${i}`, start: "top 85%" },
+              scaleX: 1,
+              transformOrigin: "top center",
+              duration: 0.4,
+              ease: "power2.out",
+            }
+          );
+          gsap.fromTo(`.pain-text-${i}`, 
+            { y: 20, opacity: 0 },
+            {
+              scrollTrigger: { trigger: `.pain-text-${i}`, start: "top 85%" },
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: "power2.out",
+            }
+          );
+        });
+
+        gsap.fromTo(".reveal-text-word", 
+          { y: 20, opacity: 0 },
+          {
+            scrollTrigger: { trigger: ".reveal-text-word", start: "top 85%" },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.05,
+            ease: "power2.out",
+          }
+        );
+
+        gsap.fromTo(".spectrum-content > p", 
+          { y: 30, opacity: 0 },
+          {
+            scrollTrigger: { trigger: ".spectrum-content", start: "top 80%" },
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+          }
+        );
+        
+        [0, 1, 2].forEach((i) => {
+          gsap.fromTo(`.spectrum-icon-${i}, .spectrum-text-${i}`, 
+            { y: 30, opacity: 0 },
+            {
+              scrollTrigger: { trigger: `.spectrum-icon-${i}`, start: "top 85%" },
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: "power2.out",
+              stagger: 0.1
+            }
+          );
+        });
+        
+        gsap.fromTo(".spectrum-line-left, .spectrum-line-right, .spectrum-dot", 
+          { opacity: 0, scaleX: 0 },
+          {
+            scrollTrigger: { trigger: ".spectrum-line-left", start: "top 90%" },
+            opacity: 1,
+            scaleX: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            stagger: 0.1
+          }
+        );
+      });
     }, sectionRef);
 
     return () => ctx.revert();

@@ -12,32 +12,33 @@ interface LineSeparatorProps {
 }
 
 export default function LineSeparator({ delay = 0 }: LineSeparatorProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (prefersReducedMotion() || !ref.current) return;
+    if (prefersReducedMotion() || !lineRef.current) return;
 
     gsap.fromTo(
-      ref.current,
+      lineRef.current,
       { scaleX: 0, opacity: 0 },
       {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+        },
         scaleX: 1,
         opacity: 1,
         duration: 1.2,
         delay,
         ease: "power2.out",
-        scrollTrigger: {
-          trigger: ref.current,
-          start: "top 85%",
-        },
       },
     );
   }, [delay]);
 
   return (
-    <div className="py-16 sm:py-24 flex justify-center">
+    <div ref={containerRef} className="flex justify-center w-full my-8 md:my-16">
       <div
-        ref={ref}
+        ref={lineRef}
         className="h-px bg-accent/40 origin-left"
         style={{ width: "120px" }}
       />

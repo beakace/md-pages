@@ -97,7 +97,7 @@ export default function SolutionSection() {
         src="/svg/4.svg"
         alt=""
         aria-hidden="true"
-        className="absolute -left-10 lg:left-[5%] top-[15%] w-48 lg:w-72 pointer-events-none select-none opacity-10 rotate-[15deg]"
+        className="hidden md:block absolute -left-10 lg:left-[5%] top-[15%] w-48 lg:w-72 pointer-events-none select-none opacity-10 rotate-[15deg]"
         style={{ filter: accentFilter }}
       />
 
@@ -120,10 +120,10 @@ export default function SolutionSection() {
 
         <ul className="solution-list space-y-10 sm:space-y-12 text-lg sm:text-xl md:text-2xl font-sans text-graphite/85 dark:text-chalk/75 mb-32 md:mb-40">
           {[
-            { text: "Mówię prostym językiem, nie technicznym żargonem", hl: "prostym językiem" },
-            { text: "Jestem terminowy i mam przejrzyste warunki", hl: "przejrzyste warunki" },
-            { text: "Dowożę w tygodniach, nie miesiącach", hl: "tygodniach" },
-            { text: "Nie znikam po publikacji", hl: "Nie znikam" },
+            { text: "Mówię prostym językiem, nie technicznym żargonem", hl: "prostym językiem", path: "M0,15 Q30,5 50,15 T100,10" },
+            { text: "Jestem terminowy i mam przejrzyste warunki", hl: "przejrzyste warunki", path: "M0,10 Q35,20 65,10 T100,16" },
+            { text: "Dowożę w tygodniach, nie miesiącach", hl: "tygodniach", path: "M0,18 Q40,5 60,15 T100,10" },
+            { text: "Nie znikam po publikacji", hl: "Nie znikam", path: "M0,12 Q30,10 50,18 T100,8" },
           ].map((item, i) => {
             const parts = item.text.split(item.hl);
             return (
@@ -134,18 +134,18 @@ export default function SolutionSection() {
                 <span className="leading-relaxed">
                   {parts[0]}
                   <span className="relative inline-block text-ink dark:text-chalk font-semibold whitespace-nowrap mx-1">
-                    <span className="relative z-10">{item.hl}</span>
+                    <span className="relative z-10 pb-1">{item.hl}</span>
                     <svg
-                      className="absolute -bottom-1 -left-2 w-[110%] h-[12px] text-accent/30 pointer-events-none z-0"
-                      viewBox="0 0 100 20"
+                      className="absolute -bottom-1.5 md:-bottom-2 -left-1 w-[105%] h-[14px] text-accent/30 pointer-events-none z-0"
+                      viewBox="0 0 100 24"
                       preserveAspectRatio="none"
                     >
                       <path
                         className="solution-svg-highlight"
-                        d="M0,15 Q25,5 50,15 T100,10"
+                        d={item.path}
                         fill="none"
                         stroke="currentColor"
-                        strokeWidth="8"
+                        strokeWidth="7"
                         strokeLinecap="round"
                       />
                     </svg>

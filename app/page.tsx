@@ -78,6 +78,8 @@ export default function Home() {
           <ProjectsPinnedSection />
         </ErrorBoundary>
 
+        <LineSeparator delay={0.1} />
+
         <MidCTA />
 
         <ErrorBoundary>
@@ -89,6 +91,8 @@ export default function Home() {
         <ErrorBoundary>
           <OpusProcessSection />
         </ErrorBoundary>
+
+        <LineSeparator delay={0.1} />
 
         <ErrorBoundary>
           <AboutSection />
