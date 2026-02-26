@@ -85,7 +85,7 @@ export default function PhilosophySection() {
         </div>
         
         <div className="relative inline-block mb-16 sm:mb-20">
-          <blockquote className="philosophy-text font-serif italic text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight text-current/35 relative z-10">
+          <blockquote className="philosophy-text font-serif italic text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight text-current/80 relative z-10">
             &ldquo;Zbudujemy stronę, wyślemy fakturę
             <br className="hidden sm:block" /> i znikniemy.&rdquo;
           </blockquote>

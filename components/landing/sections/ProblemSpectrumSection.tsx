@@ -302,7 +302,7 @@ function SpectrumContent() {
           />
           <div className="spectrum-text-1">
             <p className="font-sans text-lg sm:text-xl lg:text-2xl uppercase tracking-[0.1em] text-ink dark:text-chalk font-bold mb-2">
-              Strony po ludzku
+              JA :)
             </p>
             <p className="font-serif italic text-lg lg:text-xl text-accent font-medium">
               Złoty środek

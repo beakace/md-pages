@@ -1,8 +1,9 @@
-import kalkulacjaLeasingu from "@/public/kalkulacjaleasingu.pl.png";
-import nieziemsko from "@/public/nieziemsko.png";
-import czystotu from "@/public/czystotuwroclaw.png";
-import wzrokOk from "@/public/wzrokok.png";
-import saraStudio from "@/public/sarastudiowokalne.png";
+import agFizjo from "@/public/updated-projects/ag.png";
+import czysto from "@/public/updated-projects/ctw.png";
+import kalkulacjaGap from "@/public/updated-projects/kg.png";
+import nieziemsko from "@/public/updated-projects/n.png";
+import saraStudio from "@/public/updated-projects/ssw.png";
+import wzrokOk from "@/public/updated-projects/wo.png";
 
 export const links = [
   {
@@ -87,11 +88,19 @@ export const servicesData = [
 
 export const projectsData = [
   {
+    title: "Aleksandra Głód Fizjoterapia",
+    description:
+      "Strona z ofertą gabinetu fizjoterapeutycznego. Profesjonalny wizerunek, wyraźnie opisane usługi i wbudowany formularz ułatwiający rezerwację wizyt.",
+    tags: ["Gabinet", "Usługi", "Rezerwacje"],
+    imageUrl: agFizjo,
+    href: "https://agfizjo.pl/", // Placeholder
+  },
+  {
     title: "Czysto Tu",
     description:
       "Strona dla firmy sprzątającej z Wrocławia. Prosty układ + mocne CTA, żeby szybko zamieniać odwiedziny w zapytania.",
     tags: ["Landing page", "Formularz kontaktowy", "Wizytówka"],
-    imageUrl: czystotu,
+    imageUrl: czysto,
     href: "https://www.czystotuwroclaw.pl/",
   },
   {
@@ -103,12 +112,12 @@ export const projectsData = [
     href: "https://www.sarastudiowokalne.pl/",
   },
   {
-    title: "Kalkulacja Leasingu",
+    title: "Kalkulacja GAP",
     description:
-      "Rozbudowany serwis dla firmy z branży leasingowej. Struktura pod leady: porównanie oferty, jasne komunikaty i ścieżka do kontaktu.",
+      "Rozbudowany serwis dla firmy z branży ubezpieczeń i leasingowej. Struktura pod leady: porównanie oferty, jasne komunikaty i ścieżka do kontaktu.",
     tags: ["Serwis firmowy", "Wiele podstron", "Pozyskiwanie klientów"],
-    imageUrl: kalkulacjaLeasingu,
-    href: "https://kalkulacjaleasingu.pl",
+    imageUrl: kalkulacjaGap,
+    href: "https://kalkulacjagap.pl",
   },
   {
     title: "Wzrok Ok!",

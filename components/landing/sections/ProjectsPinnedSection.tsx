@@ -29,7 +29,7 @@ export default function ProjectsPinnedSection() {
 
       // Set up ScrollTriggers for each text block on desktop to handle the sticky image switch
       if (window.innerWidth >= 1024) {
-        projectsData.slice(0, 4).forEach((_, i) => {
+        projectsData.forEach((_, i) => {
         ScrollTrigger.create({
           trigger: `.pinned-text-${i}`,
           start: "top 50%",
@@ -84,7 +84,7 @@ export default function ProjectsPinnedSection() {
           
           {/* Left Side: Scrollable Text Blocks */}
           <div className="w-full lg:w-1/2 pb-16 lg:pb-[50vh]">
-            {projectsData.slice(0, 4).map((project, i) => (
+            {projectsData.map((project, i) => (
               <div 
                 key={i} 
                 className={`pinned-text-${i} mb-16 lg:mb-0 min-h-0 lg:min-h-[40vh] flex flex-col justify-center`}
@@ -148,13 +148,11 @@ export default function ProjectsPinnedSection() {
                 
                 {/* Image Stack */}
                 <div className="relative flex-1 w-full h-full bg-graphite/5 dark:bg-surface-dark">
-                  {projectsData.slice(0, 4).map((project, i) => (
+                  {projectsData.map((project, i) => (
                     <div 
                       key={i}
-                      className={`pinned-img-${i} absolute inset-0 w-full h-full origin-bottom`}
+                      className={`pinned-img-${i} absolute inset-0 w-full h-full origin-bottom ${i === 0 ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-5"}`}
                       style={{ 
-                        opacity: i === 0 ? 1 : 0, 
-                        transform: i === 0 ? "scale(1) translateY(0)" : "scale(0.95) translateY(20px)",
                         zIndex: activeIdx === i ? 10 : 0
                       }}
                     >
@@ -162,7 +160,7 @@ export default function ProjectsPinnedSection() {
                         src={project.imageUrl}
                         alt={project.title}
                         fill
-                        className="object-cover object-top"
+                        className="object-cover object-top scale-[1.03] origin-top"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                         priority={i === 0}
                       />
