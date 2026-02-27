@@ -84,7 +84,7 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 sm:py-36 relative overflow-hidden bg-washi dark:bg-surface-dark">
+    <section ref={sectionRef} className="pt-36 pb-24 sm:pt-48 sm:pb-36 relative overflow-hidden bg-washi dark:bg-surface-dark">
       <img
         src="/svg/2.svg"
         alt=""

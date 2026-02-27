@@ -14,3 +14,4 @@ export { default as ProjectsPinnedSection } from "./sections/ProjectsPinnedSecti
 export { default as MidCTA } from "./sections/MidCTA";
 export { default as TestimonialsSection } from "./sections/TestimonialsSection";
 export { default as AboutSection } from "./sections/AboutSection";
+export { default as ButtonDemoSection } from "./sections/ButtonDemoSection";

@@ -59,7 +59,7 @@ export default function PhilosophySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-28 sm:py-36 md:py-44 px-6 sm:px-8 w-full overflow-hidden bg-ink dark:bg-washi text-washi dark:text-ink"
+      className="relative py-28 sm:py-36 md:py-64 px-6 sm:px-8 w-full overflow-hidden bg-ink dark:bg-washi text-washi dark:text-ink"
     >
       {/* Self-hosted noise texture */}
       <div

@@ -51,12 +51,13 @@ export default function HeroSection() {
             e.preventDefault();
             window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
           }}
-          className="group inline-flex items-center justify-center gap-3 text-sm md:text-base font-medium bg-ink dark:bg-chalk text-washi dark:text-ink px-8 py-4 organic-border hover:bg-ink/90 dark:hover:bg-chalk/90 transition-all duration-300 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-washi dark:focus-visible:ring-offset-surface-dark"
+          className="group relative inline-flex items-center justify-center h-14 px-8 font-sans text-sm tracking-wide text-washi dark:text-surface-dark bg-ink dark:bg-chalk rounded-[12px] overflow-hidden transition-all duration-300 active:scale-95 outline-none hover:shadow-lg shadow-sm"
         >
-          Porozmawiajmy
-          <span className="text-accent transition-transform duration-400 group-hover:translate-x-1">
-            →
+          <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-2.5">
+            Wyceń swój projekt
+            <span className="absolute top-1/2 -translate-y-1/2 -right-5 w-1.5 h-1.5 rounded-full bg-accent opacity-0 scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100" />
           </span>
+          <div className="absolute inset-0 bg-white/10 dark:bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </a>
       </div>
     </section>

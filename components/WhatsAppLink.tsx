@@ -61,13 +61,14 @@ export default function WhatsAppLink() {
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-3 text-[15px] text-[#25D366] hover:text-[#20bd5a] transition-colors duration-300 min-h-[44px] focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+            className="group relative inline-flex items-center justify-center h-14 px-8 font-sans text-sm tracking-wide text-chalk dark:text-ink border border-chalk/20 dark:border-ink/20 rounded-[12px] overflow-hidden transition-all duration-300 hover:border-chalk dark:hover:border-ink active:scale-95 outline-none bg-transparent hover:shadow-sm w-full"
           >
-            <MessageCircle className="w-5 h-5" />
-            WhatsApp
-            <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-              →
+            <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:-translate-x-2.5">
+              <MessageCircle className="w-4 h-4" />
+              WhatsApp
+              <span className="absolute top-1/2 -translate-y-1/2 -right-5 w-1.5 h-1.5 rounded-full bg-accent opacity-0 scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100" />
             </span>
+            <div className="absolute inset-0 bg-white/5 dark:bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </a>
         ) : (
           <div className="space-y-3">

@@ -213,19 +213,23 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting || !turnstileToken}
-                className="group inline-flex items-center gap-2 font-sans text-sm border-b-2 border-accent pb-1.5 text-chalk dark:text-ink hover:border-accent/80 disabled:opacity-40 disabled:cursor-not-allowed transition-all duration-300 min-h-[44px] focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded-sm"
+                className="group relative inline-flex items-center justify-center h-12 px-8 font-sans text-sm tracking-wide text-ink dark:text-surface-dark bg-chalk dark:bg-chalk rounded-[12px] overflow-hidden transition-all duration-300 active:scale-95 outline-none hover:shadow-lg shadow-sm disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? (
-                  <>
-                    <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                    Wysyłanie...
-                  </>
-                ) : (
-                  <>
-                    Wyślij
-                    <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" />
-                  </>
-                )}
+                <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-2.5">
+                  {isSubmitting ? (
+                    <>
+                      <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin mr-2" />
+                      Wysyłanie...
+                    </>
+                  ) : (
+                    <>
+                      Wyślij
+                      <Send className="inline w-4 h-4 ml-2" />
+                      <span className="absolute top-1/2 -translate-y-1/2 -right-5 w-1.5 h-1.5 rounded-full bg-accent opacity-0 scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100" />
+                    </>
+                  )}
+                </span>
+                <div className="absolute inset-0 bg-black/5 dark:bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             </div>
 

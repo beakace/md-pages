@@ -27,8 +27,35 @@ export default function ProjectsPinnedSection() {
         ease: "power2.out",
       });
 
-      // Set up ScrollTriggers for each text block on desktop to handle the sticky image switch
-      if (window.innerWidth >= 1024) {
+        // Window Entrance Animation
+        const windowTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".projects-content-grid",
+            start: "top 40%", // Start animating when the container is 60% down the viewport
+            end: "top 10%", // Finish animating slightly earlier
+            scrub: 1,
+          }
+        });
+
+        // Start from center, scaled up, and move to its natural right position
+        windowTl.fromTo(".project-window-wrapper",
+          { 
+            xPercent: -65,
+            y: -150, // Start significantly higher, closer to "Realizacje"
+            scale: 1.25,
+            rotationY: -10,
+            rotationX: 2,
+          },
+          {
+            xPercent: 0,
+            y: 0,
+            scale: 1,
+            rotationY: 0,
+            rotationX: 0,
+            ease: "power2.inOut"
+          }
+        );
+
         projectsData.forEach((_, i) => {
         ScrollTrigger.create({
           trigger: `.pinned-text-${i}`,
@@ -37,6 +64,16 @@ export default function ProjectsPinnedSection() {
           onToggle: (self) => {
             if (self.isActive) {
               setActiveIdx(i);
+
+              // Fade out the placeholder when first project activates
+              if (i === 0) {
+                gsap.to(".project-placeholder", {
+                  opacity: 0,
+                  scale: 0.95,
+                  duration: 0.6,
+                  ease: "power3.out",
+                });
+              }
               
               // Fade in corresponding image
               gsap.to(`.pinned-img-${i}`, { 
@@ -48,6 +85,16 @@ export default function ProjectsPinnedSection() {
               });
               
             } else {
+              // When first project deactivates going UP, bring back the placeholder
+              if (i === 0 && self.direction === -1) {
+                gsap.to(".project-placeholder", {
+                  opacity: 1,
+                  scale: 1,
+                  duration: 0.6,
+                  ease: "power3.out",
+                });
+              }
+
               // Fade out corresponding image
               gsap.to(`.pinned-img-${i}`, { 
                 opacity: 0, 
@@ -60,7 +107,6 @@ export default function ProjectsPinnedSection() {
           }
         });
       });
-      }
     }, containerRef);
 
     return () => ctx.revert();
@@ -80,15 +126,19 @@ export default function ProjectsPinnedSection() {
       </div>
 
       <div className="max-w-[88rem] mx-auto px-6 sm:px-8">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 relative">
+        <div className="projects-content-grid flex flex-col lg:flex-row gap-12 lg:gap-24 relative">
           
           {/* Left Side: Scrollable Text Blocks */}
-          <div className="w-full lg:w-1/2 pb-16 lg:pb-[50vh]">
+          <div className="w-full lg:w-1/2 pb-16 lg:pb-[50vh] pt-0 lg:pt-[50vh]">
             {projectsData.map((project, i) => (
               <div 
                 key={i} 
-                className={`pinned-text-${i} mb-16 lg:mb-0 min-h-0 lg:min-h-[40vh] flex flex-col justify-center`}
+                className={`pinned-text-${i} mb-16 lg:mb-0 min-h-0 lg:min-h-[40vh] flex flex-col justify-center ${i > 0 ? 'pt-12 border-t border-graphite/10 dark:border-chalk/10 lg:border-0 lg:pt-0' : ''}`}
               >
+                {/* Mobile number indicator */}
+                <span className="lg:hidden font-sans text-xs font-bold tracking-[0.2em] text-accent/60 uppercase mb-3">
+                  0{i + 1}
+                </span>
                 <div 
                   className={`
                     pinned-text-content-${i} pl-0 lg:pl-8 py-0 lg:py-6 pr-0 lg:pr-6 relative rounded-r-xl 
@@ -137,7 +187,7 @@ export default function ProjectsPinnedSection() {
             <div className="sticky top-[20vh] h-[60vh] w-full max-h-[700px] flex flex-col justify-center perspective-[1200px]">
               
               {/* Outer "OS Window" Frame */}
-              <div className="w-full aspect-[4/3] rounded-[16px] bg-white dark:bg-ink shadow-[0_20px_50px_rgba(28,27,24,0.1)] border border-graphite/5 dark:border-chalk/5 overflow-hidden flex flex-col relative">
+              <div className="project-window-wrapper w-full aspect-[4/3] rounded-[16px] bg-white dark:bg-ink shadow-[0_20px_50px_rgba(28,27,24,0.1)] border border-graphite/5 dark:border-chalk/5 overflow-hidden flex flex-col relative perspective-[1200px]">
                 
                 {/* Top Window Bar */}
                 <div className="h-10 w-full bg-washi dark:bg-surface-dark border-b border-graphite/5 dark:border-chalk/5 flex items-center px-4 gap-2 z-20">
@@ -146,12 +196,23 @@ export default function ProjectsPinnedSection() {
                   <div className="w-2.5 h-2.5 rounded-full bg-graphite/10 dark:bg-chalk/10" />
                 </div>
                 
-                {/* Image Stack */}
+                {/* All project images start hidden */}
                 <div className="relative flex-1 w-full h-full bg-graphite/5 dark:bg-surface-dark">
+                  {/* Decorative Placeholder — MD monogram watermark */}
+                  <div className="project-placeholder absolute inset-0 w-full h-full flex items-center justify-center z-20 bg-white dark:bg-ink">
+                    <span className="font-serif italic text-[8rem] xl:text-[10rem] text-graphite/[0.06] dark:text-chalk/[0.06] leading-none select-none pointer-events-none tracking-tight">
+                      MD
+                    </span>
+                    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent/40" />
+                  </div>
+
                   {projectsData.map((project, i) => (
-                    <div 
+                    <a
                       key={i}
-                      className={`pinned-img-${i} absolute inset-0 w-full h-full origin-bottom ${i === 0 ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-5"}`}
+                      href={project.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`pinned-img-${i} absolute inset-0 w-full h-full origin-bottom block group overflow-hidden opacity-0 scale-95 translate-y-5`}
                       style={{ 
                         zIndex: activeIdx === i ? 10 : 0
                       }}
@@ -160,11 +221,12 @@ export default function ProjectsPinnedSection() {
                         src={project.imageUrl}
                         alt={project.title}
                         fill
-                        className="object-cover object-top scale-[1.03] origin-top"
+                        className="object-cover object-top scale-[1.01] origin-top transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
                         sizes="(max-width: 1024px) 100vw, 50vw"
                         priority={i === 0}
                       />
-                    </div>
+                      <div className="absolute inset-0 bg-ink/0 group-hover:bg-ink/5 dark:group-hover:bg-white/5 transition-colors duration-700 z-10 pointer-events-none" />
+                    </a>
                   ))}
                 </div>
               </div>

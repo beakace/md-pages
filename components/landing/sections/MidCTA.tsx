@@ -72,13 +72,13 @@ export default function MidCTA() {
             e.preventDefault();
             window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
           }}
-          className="group relative inline-flex items-center justify-center gap-4 text-xl sm:text-2xl font-sans font-bold bg-ink dark:bg-chalk text-washi dark:text-ink px-10 py-5 min-h-[44px] organic-border hover:bg-ink/90 dark:hover:bg-chalk/90 transition-all duration-300 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-washi dark:focus-visible:ring-offset-surface-dark"
+          className="group relative inline-flex items-center justify-center h-16 sm:h-[72px] px-10 sm:px-12 font-sans text-base sm:text-lg tracking-wide text-washi dark:text-surface-dark bg-ink dark:bg-chalk rounded-[14px] overflow-hidden transition-all duration-300 active:scale-95 outline-none hover:shadow-lg shadow-sm"
         >
-          <span className="relative z-10 drop-shadow-sm">Porozmawiajmy</span>
-
-          <span className="relative z-10 text-accent font-serif italic text-3xl transition-transform duration-300 group-hover:translate-x-3">
-            →
+          <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-3">
+            Zacznijmy współpracę
+            <span className="absolute top-1/2 -translate-y-1/2 -right-6 w-2 h-2 rounded-full bg-accent opacity-0 scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100" />
           </span>
+          <div className="absolute inset-0 bg-white/10 dark:bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </a>
       </div>
     </section>

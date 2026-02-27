@@ -86,14 +86,13 @@ export default function AboutSection() {
               style={{ filter: accentFilter }}
             />
 
-            <div className="about-image-wrapper relative w-full max-w-[320px] aspect-[4/5] organic-border border-4 border-washi dark:border-surface-dark shadow-[0_20px_60px_rgba(28,27,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.3)] bg-graphite overflow-hidden">
-              <div className="absolute inset-0 bg-accent/5 mix-blend-overlay z-10" />
+            <div className="about-image-wrapper relative w-full max-w-[320px] aspect-[4/4.5]">
               <Image
-                src="/MD.png"
+                src="/md-polaroid.png"
                 alt="Michał Dziuba"
                 fill
-                quality={90}
-                className="object-cover"
+                quality={95}
+                className="object-contain"
                 sizes="(max-width: 1024px) 320px, 400px"
                 loading="lazy"
               />

@@ -10,23 +10,19 @@ gsap.registerPlugin(ScrollTrigger);
 const benefits = [
   {
     title: "Stronę, która działa",
-    desc: "Szybka, czytelna, dopasowana do każdego zdjęcia i urządzenia.",
-    rot: "-rotate-[2deg]",
+    desc: "Szybka, czytelna, profesjonalna i dopasowana do każdego urządzenia.",
   },
   {
     title: "Jasny przekaz",
     desc: "Strona, która mówi wprost czym się zajmujesz i dla kogo.",
-    rot: "rotate-[1.5deg]",
   },
   {
     title: "Przemyślaną strukturę",
     desc: "Każdy element ma swoje miejsce, cel i uzasadnienie.",
-    rot: "-rotate-[1deg]",
   },
   {
     title: "Spokój głowy",
     desc: "Wiesz dokładnie co dostajesz, kiedy i za ile.",
-    rot: "rotate-[2.5deg]",
   },
 ];
 
@@ -75,8 +71,7 @@ export default function SolutionSection() {
 
       gsap.from(".benefit-card", {
         scrollTrigger: { trigger: ".benefits-grid", start: "top 80%" },
-        y: 60,
-        scale: 0.9,
+        y: 40,
         opacity: 0,
         duration: 1,
         stagger: 0.15,
@@ -170,19 +165,21 @@ export default function SolutionSection() {
             Co dokładnie dostajesz?
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-8 lg:gap-12 relative z-10">
+          <div className="grid sm:grid-cols-2 gap-x-12 gap-y-16 lg:gap-x-16 lg:gap-y-20 relative z-10">
             {benefits.map((item, i) => (
               <div
                 key={i}
-                className={`benefit-card ${item.rot} bg-washi dark:bg-graphite/40 p-10 shadow-[0_4px_20px_rgba(28,27,24,0.03)] dark:shadow-none border border-graphite/10 dark:border-chalk/10 organic-border hover:-translate-y-2 transition-transform duration-500 group flex flex-col justify-center`}
+                className="benefit-card flex flex-col pt-8 border-t border-graphite/20 dark:border-chalk/20"
               >
-                <div className="w-12 h-[3px] bg-accent/30 rounded-full mb-8" />
-
-                <h4 className="font-serif italic text-2xl sm:text-3xl tracking-tight text-ink dark:text-chalk mb-4">
-                  {item.title}
-                </h4>
-
-                <p className="font-sans text-[17px] text-graphite/70 dark:text-chalk/60 leading-relaxed">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="font-serif italic text-xl md:text-2xl text-accent/50 mt-1">
+                    0{i + 1}
+                  </span>
+                  <h4 className="font-serif italic text-2xl md:text-3xl text-ink dark:text-chalk leading-tight">
+                    {item.title}
+                  </h4>
+                </div>
+                <p className="font-sans text-base md:text-lg text-graphite/80 dark:text-chalk/70 leading-relaxed pr-2 sm:pr-6">
                   {item.desc}
                 </p>
               </div>

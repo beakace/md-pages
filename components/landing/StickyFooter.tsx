@@ -21,10 +21,20 @@ export default function StickyFooter() {
       <div className="relative w-full max-w-[64rem] mx-auto px-6 sm:px-8 py-12 sm:py-16">
         <div className="grid lg:grid-cols-[1fr_1fr] gap-10 lg:gap-20 items-start">
           <div className="text-center lg:text-left">
-            <h2 className="font-sans text-2xl sm:text-3xl md:text-4xl uppercase tracking-[0.12em] leading-[1.3] mb-4 lg:mb-6 font-semibold text-chalk dark:text-ink">
+            <img
+              src="/svg/5.svg"
+              alt=""
+              aria-hidden="true"
+              className="w-12 sm:w-16 mb-4 opacity-30 select-none pointer-events-none mx-auto lg:mx-0"
+              style={{ filter: accentFilter }}
+            />
+            <p className="font-handwritten text-accent text-xl md:text-2xl mb-2 -rotate-2">
+              Zacznijmy współpracę
+            </p>
+            <h2 className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-chalk dark:text-ink leading-tight mb-4 lg:mb-6">
               Kontakt
             </h2>
-            <p className="text-base lg:text-lg text-muted-dark dark:text-muted leading-relaxed mb-8 lg:mb-10 max-w-md mx-auto lg:mx-0 lg:max-w-none">
+            <p className="text-base lg:text-lg text-chalk/70 dark:text-graphite/70 leading-relaxed mb-8 lg:mb-10 max-w-md mx-auto lg:mx-0 lg:max-w-none font-sans">
               Opowiedz o swojej firmie — powiem Ci, jak mogę pomóc.
               <span className="hidden sm:inline">
                 {" "}
@@ -36,21 +46,23 @@ export default function StickyFooter() {
                 href={SITE.calendly}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 text-[15px] font-medium bg-chalk dark:bg-ink text-ink dark:text-washi px-6 py-3 organic-border hover:bg-chalk/90 dark:hover:bg-ink/90 transition-all duration-300 active:scale-[0.98] min-h-[44px] focus-visible:ring-2 focus-visible:ring-accent"
+                className="group relative inline-flex items-center justify-center h-14 px-8 font-sans text-sm tracking-wide text-ink dark:text-surface-dark bg-chalk dark:bg-chalk rounded-[12px] overflow-hidden transition-all duration-300 active:scale-95 outline-none hover:shadow-lg shadow-sm w-full lg:w-auto"
               >
-                Umów rozmowę
-                <span className="text-accent transition-transform duration-300 group-hover:translate-x-1">
-                  →
+                <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-2.5">
+                  Zarezerwuj termin
+                  <span className="absolute top-1/2 -translate-y-1/2 -right-5 w-1.5 h-1.5 rounded-full bg-accent opacity-0 scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100" />
                 </span>
+                <div className="absolute inset-0 bg-black/5 dark:bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
               <a
                 href={`mailto:${SITE.email}`}
-                className="group inline-flex items-center justify-center gap-3 text-[15px] font-medium border border-chalk/20 dark:border-ink/20 text-chalk dark:text-ink px-6 py-3 organic-border hover:bg-chalk/10 dark:hover:bg-ink/10 transition-all duration-300 active:scale-[0.98] min-h-[44px] focus-visible:ring-2 focus-visible:ring-accent"
+                className="group relative inline-flex items-center justify-center h-14 px-8 font-sans text-sm tracking-wide text-chalk dark:text-ink border border-chalk/20 dark:border-ink/20 rounded-[12px] overflow-hidden transition-all duration-300 hover:border-chalk dark:hover:border-ink active:scale-95 outline-none bg-transparent hover:shadow-sm w-full lg:w-auto"
               >
-                Napisz maila
-                <span className="text-accent transition-transform duration-300 group-hover:translate-x-1">
-                  →
+                <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-2.5">
+                  Wyślij e-mail
+                  <span className="absolute top-1/2 -translate-y-1/2 -right-5 w-1.5 h-1.5 rounded-full bg-accent opacity-0 scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100" />
                 </span>
+                <div className="absolute inset-0 bg-white/5 dark:bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </a>
             </div>
 
@@ -60,7 +72,7 @@ export default function StickyFooter() {
           </div>
 
           <div className="hidden lg:block lg:pl-12 lg:border-l border-white/10 dark:border-black/10">
-            <p className="font-sans text-xs uppercase tracking-[0.12em] text-muted-dark dark:text-muted mb-8">
+            <p className="font-serif italic text-xl text-chalk dark:text-ink mb-8">
               Wyślij wiadomość
             </p>
             <ContactForm />
