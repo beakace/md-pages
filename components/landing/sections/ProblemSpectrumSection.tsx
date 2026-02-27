@@ -60,6 +60,55 @@ export default function ProblemSpectrumSection() {
         // Give the user much more time to actually read the finished text
         tl.to({}, { duration: 1.2 });
       });
+
+      // Mobile: simple fade-up reveals (no pinning), consistent with other sections
+      mm.add("(max-width: 767px)", () => {
+        gsap.fromTo(".problem-intro", 
+          { y: 30, opacity: 0 },
+          {
+            scrollTrigger: { trigger: ".problem-intro", start: "top 85%" },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+          }
+        );
+
+        [0, 1, 2].forEach((i) => {
+          gsap.fromTo(`.pain-line-${i}`, 
+            { scaleX: 0 },
+            {
+              scrollTrigger: { trigger: `.pain-line-${i}`, start: "top 90%" },
+              scaleX: 1,
+              transformOrigin: "top center",
+              duration: 0.4,
+              ease: "power2.out",
+            }
+          );
+          gsap.fromTo(`.pain-text-${i}`, 
+            { y: 20, opacity: 0 },
+            {
+              scrollTrigger: { trigger: `.pain-text-${i}`, start: "top 90%" },
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: "power2.out",
+            }
+          );
+        });
+
+        gsap.fromTo(".reveal-text-word", 
+          { y: 20, opacity: 0 },
+          {
+            scrollTrigger: { trigger: ".reveal-text-word", start: "top 90%" },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.04,
+            ease: "power2.out",
+          }
+        );
+      });
     }, sectionRef);
 
     return () => ctx.revert();
