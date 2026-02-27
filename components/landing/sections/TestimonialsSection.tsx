@@ -15,13 +15,13 @@ const testimonials = [
     align: "left" as const,
   },
   {
-    quote: "Michał łączy wdrażanie i projektowanie stron na tyle dobrze, że zaoszczędzisz podwójny budżet bez utraty jakości",
+    quote: "Michał łączy wdrażanie i projektowanie stron na tyle dobrze, że zaoszczędzisz podwójny budżet bez utraty jakości",
     author: "Łukasz",
     role: "Przedsiębiorca, Wrocław",
     align: "right" as const,
   },
   {
-    quote: "Szybko, sprawnie i bez zbędnego komplikowania. Polecam każdemu, kto ceni swój czas.",
+    quote: "Szybko, sprawnie i bez zbędnego komplikowania. Polecam każdemu, kto ceni swój czas.",
     author: "Sara",
     role: "Przedsiębiorca, Wrocław",
     align: "left" as const,

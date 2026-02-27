@@ -115,12 +115,12 @@ export default function ProblemSpectrumSection() {
   }, []);
 
   const painPoints = [
-    { label: "Agencja?", desc: "Drogo i bardzo długo." },
+    { label: "Agencja?", desc: "Drogo i bardzo długo." },
     { label: "Freelancer z neta?", desc: "Całkowita loteria." },
     { label: "Kreatory / AI?", desc: "Musisz ogarniać sam." },
   ];
 
-  const revealWords = "Szukasz kogoś, kto po prostu zrobi to dobrze. Bez komplikacji. W ustalonym terminie i na przejrzystych warunkach.".split(" ");
+  const revealWords = "Szukasz kogoś, kto po prostu zrobi to dobrze. Bez komplikacji. W ustalonym terminie i na przejrzystych warunkach.".split(" ");
 
   if (noMotion) {
     return (

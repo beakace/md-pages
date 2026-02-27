@@ -37,28 +37,28 @@ export const processSteps = [
     title: "Rozpoznanie & plan",
     location: "Rozmowa 15–30 min",
     description:
-      "Krótka rozmowa, w której poznaję Twój biznes i cele strony. Ustalamy, co ma się na niej znaleźć, do kogo ma trafiać i jaki efekt ma przynieść. Po rozmowie masz jasny plan i kolejne kroki.",
+      "Krótka rozmowa, w\u00A0której poznaję Twój biznes i\u00A0cele strony. Ustalamy, co ma się na\u00A0niej znaleźć, do\u00A0kogo ma trafiać i\u00A0jaki efekt ma przynieść. Po\u00A0rozmowie masz jasny plan i\u00A0kolejne kroki.",
     step: "01",
   },
   {
     title: "Projekt & treści",
     location: "Szybkie iteracje",
     description:
-      "Projektuję prosty, nowoczesny układ nastawiony na kontakt z klientem. Pomagam uporządkować treści — nawet jeśli zaczynamy od zera. Wprowadzamy szybkie poprawki, aż wszystko będzie czytelne i spójne.",
+      "Projektuję prosty, nowoczesny układ nastawiony na kontakt z klientem. Pomagam uporządkować treści — nawet jeśli zaczynamy od zera. Wprowadzamy szybkie poprawki, aż wszystko będzie czytelne i spójne.",
     step: "02",
   },
   {
     title: "Wdrożenie & funkcje",
     location: "Wersja testowa + poprawki",
     description:
-      "Składam gotową stronę: szybką, czytelną i dobrze działającą na telefonach. Dodajemy potrzebne elementy, takie jak sklep, formularz kontaktowy, mapa dojazdu itd.",
+      "Składam gotową stronę: szybką, czytelną i dobrze działającą na telefonach. Dodajemy potrzebne elementy, takie jak sklep, formularz kontaktowy, mapa dojazdu itd.",
     step: "03",
   },
   {
     title: "Publikacja & wsparcie",
     location: "Sprawne przekazanie",
     description:
-      "Publikuję stronę i wykonuję podstawowe ustawienia widoczności w Google. Po starcie masz krótkie wsparcie na ewentualne poprawki, żeby wszystko działało tak, jak powinno.",
+      "Publikuję stronę i wykonuję podstawowe ustawienia widoczności w Google. Po starcie masz krótkie wsparcie na ewentualne poprawki, żeby wszystko działało tak, jak powinno.",
     step: "04",
   },
 ] as const;
@@ -67,22 +67,22 @@ export const servicesData = [
   {
     title: "Landing page'e",
     description:
-      "Szybkie, nowoczesne landing page'e z jasnym przekazem, mocnym CTA i świetnym doświadczeniem na mobile.",
+      "Szybkie, nowoczesne landing page'e z jasnym przekazem, mocnym CTA i świetnym doświadczeniem na mobile.",
   },
   {
     title: "Strony firmowe",
     description:
-      "Profesjonalne serwisy dla firm i specjalistów — schludne, wiarygodne i łatwe w utrzymaniu.",
+      "Profesjonalne serwisy dla firm i specjalistów — schludne, wiarygodne i łatwe w utrzymaniu.",
   },
   {
     title: "Ulepszenia",
     description:
-      "Jeśli masz już stronę, ale nie działa tak jak powinna — poprawię szybkość, czytelność oferty i ścieżkę do kontaktu.",
+      "Jeśli masz już stronę, ale nie działa tak jak powinna — poprawię szybkość, czytelność oferty i ścieżkę do kontaktu.",
   },
   {
     title: "Sklepy",
     description:
-      "Dla firm, które chcą pokazać ofertę i produkty w czytelny sposób — z naciskiem na prostą obsługę i konwersję.",
+      "Dla firm, które chcą pokazać ofertę i produkty w czytelny sposób — z naciskiem na prostą obsługę i konwersję.",
   },
 ] as const;
 
@@ -90,7 +90,7 @@ export const projectsData = [
   {
     title: "Aleksandra Głód Fizjoterapia",
     description:
-      "Strona z ofertą gabinetu fizjoterapeutycznego. Profesjonalny wizerunek, wyraźnie opisane usługi i wbudowany formularz ułatwiający rezerwację wizyt.",
+      "Strona z ofertą gabinetu fizjoterapeutycznego. Profesjonalny wizerunek, wyraźnie opisane usługi i wbudowany formularz ułatwiający rezerwację wizyt.",
     tags: ["Gabinet", "Usługi", "Rezerwacje"],
     imageUrl: agFizjo,
     href: "https://agfizjo.pl/", // Placeholder
@@ -106,7 +106,7 @@ export const projectsData = [
   {
     title: "Sara Studio Wokalne",
     description:
-      "Strona dla trenerki wokalnej. Czytelna oferta i szybki kontakt — tak, żeby łatwo było umówić lekcję.",
+      "Strona dla trenerki wokalnej. Czytelna oferta i szybki kontakt — tak, żeby łatwo było umówić lekcję.",
     tags: ["Landing page", "Wizytówka"],
     imageUrl: saraStudio,
     href: "https://www.sarastudiowokalne.pl/",
@@ -114,7 +114,7 @@ export const projectsData = [
   {
     title: "Kalkulacja GAP",
     description:
-      "Rozbudowany serwis dla firmy z branży ubezpieczeń i leasingowej. Struktura pod leady: porównanie oferty, jasne komunikaty i ścieżka do kontaktu.",
+      "Rozbudowany serwis dla firmy z branży ubezpieczeń i leasingowej. Struktura pod leady: porównanie oferty, jasne komunikaty i ścieżka do kontaktu.",
     tags: ["Serwis firmowy", "Wiele podstron", "Pozyskiwanie klientów"],
     imageUrl: kalkulacjaGap,
     href: "https://kalkulacjagap.pl",
@@ -122,14 +122,14 @@ export const projectsData = [
   {
     title: "Wzrok Ok!",
     description:
-      "Sklep internetowy dla firmy z produktami medycznymi. Przejrzysta prezentacja produktów i wygodne zakupy na telefonie.",
+      "Sklep internetowy dla firmy z produktami medycznymi. Przejrzysta prezentacja produktów i wygodne zakupy na telefonie.",
     tags: ["Sklep online", "Oferta", "Zakupy"],
     imageUrl: wzrokOk,
     href: "https://wzrokok.pl/",
   },
   {
     title: "Nieziemsko",
-    description: "Landing page od zera: jasny przekaz, spójny wygląd.",
+    description: "Nowoczesny landing page dla aplikacji zrzeszającej konsultantów.",
     tags: ["Landing page", "Atrakcyjny design", "CTA"],
     imageUrl: nieziemsko,
     href: "https://nieziemsko.com",
@@ -137,12 +137,12 @@ export const projectsData = [
 ] as const;
 
 export const skillsData = [
-  "Szybkość i płynność działania",
-  "Nowoczesny wygląd i spójny branding",
+  "Szybkość i płynność działania",
+  "Nowoczesny wygląd i spójny branding",
   "Jasna oferta + mocne CTA",
   "Wersja mobile dopięta na 100%",
   "Podstawy widoczności w Google",
-  "Mierzenie zapytań i kontaktów",
+  "Mierzenie zapytań i kontaktów",
 ] as const;
 
 export async function getProjects() {

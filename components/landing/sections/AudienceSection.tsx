@@ -10,15 +10,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const forMe = [
   "Usługi (sprzątanie, trenerzy, fizjoterapia, coaching...)",
-  "Gabinety i praktyki (lekarze, prawnicy, architekci...)",
-  "Sklepy i lokale (restauracje, kawiarnie, butiki...)",
-  "Freelancerzy i jednoosobowe działalności",
+  "Gabinety i praktyki (lekarze, prawnicy, architekci...)",
+  "Sklepy i lokale (restauracje, kawiarnie, butiki...)",
+  "Freelancerzy i jednoosobowe działalności",
 ];
 
 const notForMe = [
   "Korporacje z długimi procesami decyzyjnymi",
-  "Projekty wymagające rozbudowanych systemów",
+  "Fani przestarzałych technologii.",
   "Klienci, dla których liczy się tylko cena",
+  "Firmy, które szukają agencji 360°.",
 ];
 
 export default function AudienceSection() {

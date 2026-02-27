@@ -19,7 +19,7 @@ const steps = [
   {
     num: "02",
     title: "Propozycja",
-    desc: "Dostajesz konkretną ofertę: co zrobię, kiedy, za ile. Bez ukrytych kosztów i żargonu.",
+    desc: "Dostajesz konkretną ofertę: co zrobię, kiedy, za ile. Bez ukrytych kosztów i żargonu.",
     note: "Jasne warunki",
     noteRot: "rotate-[3deg]",
     doodle: "M10,50 Q35,15 50,50 T90,50",
@@ -35,7 +35,7 @@ const steps = [
   {
     num: "04",
     title: "Start",
-    desc: "Publikuję stronę i pokazuję, jak z niej korzystać. Po starcie nie znikam — służę wsparciem i radą.",
+    desc: "Publikuję stronę i pokazuję, jak z niej korzystać. Po starcie nie znikam — służę wsparciem i radą.",
     note: "Ciągła opieka",
     noteRot: "rotate-[2deg]",
     doodle: "M10,60 L40,80 L90,15",

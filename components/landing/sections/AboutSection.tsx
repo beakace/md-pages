@@ -12,15 +12,15 @@ const intro = "Robię strony dla lokalnych firm.";
 
 const paragraphs = [
   {
-    text: "Przez lata prowadziłem projekty marketingowe. Widziałem, jak agencje robią z prostych rzeczy wielomiesięczne procesy. Teraz robię to sam, szybciej i prościej.",
+    text: "Przez lata prowadziłem projekty marketingowe. Widziałem, jak agencje robią z prostych rzeczy wielomiesięczne procesy. Teraz robię to sam, szybciej i prościej.",
     highlight: false,
   },
   {
-    text: "Od kilku lat projektuję i buduję strony jako niezależny web designer i programista. Jestem człowiekiem, który mówi wprost, dotrzymuje terminów i jest łatwy w kontakcie.",
+    text: "Od kilku lat projektuję i buduję strony jako niezależny web designer i programista. Jestem człowiekiem, który mówi wprost, dotrzymuje terminów i jest łatwy w kontakcie.",
     highlight: false,
   },
   {
-    text: "Szczęśliwy mąż, ojciec dwóch pięciolatków i gitarzysta po godzinach.",
+    text: "Szczęśliwy mąż, ojciec dwóch pięciolatków i gitarzysta po godzinach.",
     highlight: true,
   },
 ];

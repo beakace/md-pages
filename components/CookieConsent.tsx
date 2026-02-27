@@ -48,7 +48,7 @@ export default function CookieConsent() {
       </button>
 
       <p className="text-sm leading-relaxed pr-6 mb-4">
-        Ta strona używa cookies, aby działać poprawnie i analizować ruch.{" "}
+        Ta strona używa cookies, aby działać poprawnie i{"\u00A0"}analizować ruch.{" "}
         <Link
           href="/polityka-prywatnosci"
           className="underline underline-offset-2 hover:text-accent transition-colors"

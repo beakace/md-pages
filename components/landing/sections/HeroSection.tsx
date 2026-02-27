@@ -42,7 +42,7 @@ export default function HeroSection() {
         <p className="text-base sm:text-lg text-muted dark:text-muted-dark max-w-[34rem] leading-relaxed mb-10">
           Bez agencyjnych sztuczek. Bez przypadkowych szablonów AI.
           <br />
-          Profesjonalnie, skutecznie i w rozsądnej cenie.
+          Profesjonalnie, skutecznie i w rozsądnej cenie.
         </p>
 
         <a

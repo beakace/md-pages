@@ -10,19 +10,19 @@ gsap.registerPlugin(ScrollTrigger);
 const benefits = [
   {
     title: "Stronę, która działa",
-    desc: "Szybka, czytelna, profesjonalna i dopasowana do każdego urządzenia.",
+    desc: "Szybka, czytelna, profesjonalna i dopasowana do każdego urządzenia.",
   },
   {
     title: "Jasny przekaz",
-    desc: "Strona, która mówi wprost czym się zajmujesz i dla kogo.",
+    desc: "Strona, która mówi wprost czym się zajmujesz i dla kogo jest.",
   },
   {
     title: "Przemyślaną strukturę",
-    desc: "Każdy element ma swoje miejsce, cel i uzasadnienie.",
+    desc: "Każdy element ma swoje miejsce, cel i uzasadnienie.",
   },
   {
     title: "Spokój głowy",
-    desc: "Wiesz dokładnie co dostajesz, kiedy i za ile.",
+    desc: "Wiesz dokładnie co dostajesz, kiedy i za ile.",
   },
 ];
 
@@ -116,7 +116,7 @@ export default function SolutionSection() {
         <ul className="solution-list space-y-10 sm:space-y-12 text-lg sm:text-xl md:text-2xl font-sans text-graphite/85 dark:text-chalk/75 mb-32 md:mb-40">
           {[
             { text: "Mówię prostym językiem, nie technicznym żargonem", hl: "prostym językiem", path: "M0,15 Q30,5 50,15 T100,10" },
-            { text: "Jestem terminowy i mam przejrzyste warunki", hl: "przejrzyste warunki", path: "M0,10 Q35,20 65,10 T100,16" },
+            { text: "Jestem terminowy i mam przejrzyste warunki", hl: "przejrzyste warunki", path: "M0,10 Q35,20 65,10 T100,16" },
             { text: "Dowożę w tygodniach, nie miesiącach", hl: "tygodniach", path: "M0,18 Q40,5 60,15 T100,10" },
             { text: "Nie znikam po publikacji", hl: "Nie znikam", path: "M0,12 Q30,10 50,18 T100,8" },
           ].map((item, i) => {
