@@ -49,7 +49,7 @@ export default function ContactForm() {
         callback: (token: string) => setTurnstileToken(token),
         "error-callback": () => setTurnstileToken(null),
         "expired-callback": () => setTurnstileToken(null),
-        theme: theme === "dark" || theme === "alt" ? "light" : "dark", // Using light for dark/alt dimensions
+        theme: theme === "alt" ? "light" : "dark", // Using light turnstile for alt dimension (darker bg)
       });
     }
   }, [turnstileLoaded, theme]);
