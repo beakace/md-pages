@@ -93,7 +93,7 @@ export const projectsData = [
       "Strona z ofertą gabinetu fizjoterapeutycznego. Profesjonalny wizerunek, wyraźnie opisane usługi i wbudowany formularz ułatwiający rezerwację wizyt.",
     tags: ["Gabinet", "Usługi", "Rezerwacje"],
     imageUrl: agFizjo,
-    href: "https://agfizjo.pl/", // Placeholder
+    href: "https://www.agfizjoterapia.com/", 
   },
   {
     title: "Czysto Tu",
