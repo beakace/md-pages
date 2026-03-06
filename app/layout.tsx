@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Caveat, Libre_Baskerville, Plus_Jakarta_Sans } from "next/font/google";
+import { Caveat, Libre_Baskerville, Plus_Jakarta_Sans, Syne, Space_Grotesk } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/next";
 import ThemeContextProvider from "@/context/theme-context";
@@ -22,6 +22,18 @@ const libreBaskerville = Libre_Baskerville({
 const caveat = Caveat({
   subsets: ["latin", "latin-ext"],
   variable: "--font-handwritten",
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-syne",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-space-grotesk",
   display: "swap",
 });
 
@@ -60,7 +72,7 @@ export default function RootLayout({
   return (
     <html
       lang="pl"
-      className={`!scroll-smooth ${plusJakarta.variable} ${libreBaskerville.variable} ${caveat.variable}`}
+      className={`!scroll-smooth ${plusJakarta.variable} ${libreBaskerville.variable} ${caveat.variable} ${syne.variable} ${spaceGrotesk.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans relative bg-washi text-ink dark:bg-surface-dark dark:text-[#e8e6e3] antialiased">

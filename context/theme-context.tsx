@@ -2,14 +2,14 @@
 
 import React, { useEffect, useState, createContext, useContext } from "react";
 
-type Theme = "light" | "dark";
+type Dimension = "base" | "alt";
 
 type ThemeContextProviderProps = {
   children: React.ReactNode;
 };
 
 type ThemeContextType = {
-  theme: Theme;
+  theme: Dimension; // Keeping name 'theme' for backward compatibility
   toggleTheme: () => void;
 };
 
@@ -18,33 +18,37 @@ const ThemeContext = createContext<ThemeContextType | null>(null);
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
-  // Default to dark. Light mode is only enabled if the user explicitly chooses it.
-  const [theme, setTheme] = useState<Theme>("dark");
+  // Default to base dimension. Base dimension uses dark mode styling by default.
+  const [theme, setTheme] = useState<Dimension>("base");
 
   const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark");
-      window.localStorage.setItem("theme", "dark");
-      document.documentElement.classList.add("dark");
+    if (theme === "base") {
+      setTheme("alt");
+      window.localStorage.setItem("dimension", "alt");
+      document.documentElement.classList.add("alt-dimension");
+      document.documentElement.classList.add("dark"); // Ensures text contrast on images
     } else {
-      setTheme("light");
-      window.localStorage.setItem("theme", "light");
-      document.documentElement.classList.remove("dark");
+      setTheme("base");
+      window.localStorage.setItem("dimension", "base");
+      document.documentElement.classList.remove("alt-dimension");
+      document.documentElement.classList.remove("dark"); // Base is light mode version
     }
   };
 
   useEffect(() => {
-    const localTheme = window.localStorage.getItem("theme") as Theme | null;
+    const localDimension = window.localStorage.getItem("dimension") as Dimension | null;
 
-    if (localTheme === "light") {
-      setTheme("light");
-      document.documentElement.classList.remove("dark");
+    if (localDimension === "alt") {
+      setTheme("alt");
+      document.documentElement.classList.add("alt-dimension");
+      document.documentElement.classList.add("dark");
       return;
     }
 
-    // Default: dark
-    setTheme("dark");
-    document.documentElement.classList.add("dark");
+    // Default: base (light mode version)
+    setTheme("base");
+    document.documentElement.classList.remove("alt-dimension");
+    document.documentElement.classList.remove("dark"); // Base is light mode version
   }, []);
 
   return (

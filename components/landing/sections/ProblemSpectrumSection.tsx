@@ -151,7 +151,7 @@ export default function ProblemSpectrumSection() {
       <div className="max-w-[56rem] mx-auto w-full relative z-10 flex flex-col items-center flex-1 justify-center">
         <div className="problem-content w-full md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 mb-32 md:mb-0">
           <div className="problem-intro text-center mb-10 md:mb-16 flex flex-col items-center">
-            <p className="font-handwritten text-accent text-xl md:text-2xl mb-4 -rotate-2">
+            <p className="font-handwritten text-accent text-xl md:text-2xl mb-4 -rotate-2 [.alt-dimension_&]:text-white [.alt-dimension_&]:font-sans [.alt-dimension_&]:uppercase [.alt-dimension_&]:tracking-[0.2em] [.alt-dimension_&]:text-xs [.alt-dimension_&]:font-bold [.alt-dimension_&]:not-italic [.alt-dimension_&]:transform-none transition-all duration-700">
               Szukasz wykonawcy
             </p>
             <h2 className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-ink dark:text-chalk leading-tight mb-4">

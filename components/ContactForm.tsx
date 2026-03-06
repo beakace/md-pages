@@ -21,7 +21,7 @@ declare global {
 }
 
 const inputBase =
-  "w-full bg-transparent border-0 border-b border-chalk/20 dark:border-ink/20 text-chalk dark:text-ink placeholder:text-chalk/25 dark:placeholder:text-ink/25 py-4 px-0 text-base focus:outline-none focus:border-accent transition-colors duration-300";
+  "w-full bg-transparent border-0 border-b border-chalk/20 dark:border-ink/20 [.alt-dimension_&]:border-white/20 text-chalk dark:text-ink [.alt-dimension_&]:text-white placeholder:text-chalk/25 dark:placeholder:text-ink/25 [.alt-dimension_&]:placeholder:text-white/30 py-4 px-0 text-base focus:outline-none focus:border-accent transition-colors duration-300";
 
 export default function ContactForm() {
   const { theme } = useTheme();
@@ -49,7 +49,7 @@ export default function ContactForm() {
         callback: (token: string) => setTurnstileToken(token),
         "error-callback": () => setTurnstileToken(null),
         "expired-callback": () => setTurnstileToken(null),
-        theme: theme === "dark" ? "light" : "dark",
+        theme: theme === "dark" || theme === "alt" ? "light" : "dark", // Using light for dark/alt dimensions
       });
     }
   }, [turnstileLoaded, theme]);
@@ -114,7 +114,7 @@ export default function ContactForm() {
 
   if (!TURNSTILE_SITE_KEY) {
     return (
-      <p className="text-sm text-muted-dark dark:text-muted mt-6">
+      <p className="text-sm text-muted-dark dark:text-muted [.alt-dimension_&]:text-white/60 mt-6 transition-colors duration-700">
         Formularz wymaga konfiguracji NEXT_PUBLIC_TURNSTILE_SITE_KEY w .env.local
       </p>
     );
@@ -133,10 +133,10 @@ export default function ContactForm() {
               className="w-12 h-12 text-accent mx-auto mb-5"
               strokeWidth={1.5}
             />
-            <p className="font-serif text-xl text-chalk dark:text-ink mb-1">
+            <p className="font-serif text-xl text-chalk dark:text-ink [.alt-dimension_&]:text-white mb-1 transition-colors duration-700">
               Dziękuję.
             </p>
-            <p className="text-sm text-muted-dark dark:text-muted">
+            <p className="text-sm text-muted-dark dark:text-muted [.alt-dimension_&]:text-white/60 transition-colors duration-700">
               Odezwę się wkrótce.
             </p>
           </div>
@@ -158,7 +158,7 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="contact-email"
-                className="block font-sans text-xs uppercase tracking-[0.12em] text-muted-dark dark:text-muted mb-3"
+                className="block font-sans text-xs uppercase tracking-[0.12em] text-muted-dark dark:text-muted [.alt-dimension_&]:text-white/60 mb-3 transition-colors duration-700"
               >
                 E-mail
               </label>
@@ -178,7 +178,7 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="contact-message"
-                className="block font-sans text-xs uppercase tracking-[0.12em] text-muted-dark dark:text-muted mb-3"
+                className="block font-sans text-xs uppercase tracking-[0.12em] text-muted-dark dark:text-muted [.alt-dimension_&]:text-white/60 mb-3 transition-colors duration-700"
               >
                 Wiadomość
               </label>
@@ -204,7 +204,7 @@ export default function ContactForm() {
             <div key={theme} ref={turnstileRef} className="min-h-[65px] [&_iframe]:max-h-[65px]">
               {!turnstileLoaded && (
                 <div className="h-[65px] flex items-center">
-                  <div className="w-6 h-6 border-2 border-muted-dark dark:border-muted border-t-transparent rounded-full animate-spin" />
+                  <div className="w-6 h-6 border-2 border-muted-dark dark:border-muted [.alt-dimension_&]:border-white/20 border-t-transparent rounded-full animate-spin" />
                 </div>
               )}
             </div>
@@ -213,9 +213,9 @@ export default function ContactForm() {
               <button
                 type="submit"
                 disabled={isSubmitting || !turnstileToken}
-                className="group relative inline-flex items-center justify-center h-12 px-8 font-sans text-sm tracking-wide text-ink dark:text-surface-dark bg-chalk dark:bg-chalk rounded-[12px] overflow-hidden transition-all duration-300 active:scale-95 outline-none hover:shadow-lg shadow-sm disabled:opacity-40 disabled:cursor-not-allowed"
+                className="group relative inline-flex items-center justify-center h-12 px-8 font-sans text-sm tracking-wide text-ink dark:text-surface-dark [.alt-dimension_&]:text-white bg-chalk dark:bg-chalk [.alt-dimension_&]:bg-accent rounded-[12px] [.alt-dimension_&]:rounded-none overflow-hidden transition-all duration-500 active:scale-95 outline-none hover:shadow-lg shadow-sm disabled:opacity-40 disabled:cursor-not-allowed w-full lg:w-auto"
               >
-                <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-2.5">
+                <span className="relative z-10 transition-transform duration-300 group-hover:-translate-x-2.5 font-medium [.alt-dimension_&]:uppercase [.alt-dimension_&]:tracking-wider">
                   {isSubmitting ? (
                     <>
                       <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin mr-2" />
@@ -225,20 +225,20 @@ export default function ContactForm() {
                     <>
                       Wyślij
                       <Send className="inline w-4 h-4 ml-2" />
-                      <span className="absolute top-1/2 -translate-y-1/2 -right-5 w-1.5 h-1.5 rounded-full bg-accent opacity-0 scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100" />
+                      <span className="absolute top-1/2 -translate-y-1/2 -right-5 w-1.5 h-1.5 rounded-full bg-accent opacity-0 scale-0 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 [.alt-dimension_&]:bg-white [.alt-dimension_&]:rounded-none [.alt-dimension_&]:w-2 [.alt-dimension_&]:h-2" />
                     </>
                   )}
                 </span>
-                <div className="absolute inset-0 bg-black/5 dark:bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-black/5 dark:bg-black/10 [.alt-dimension_&]:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
             </div>
 
-            <p className="text-[11px] text-muted-dark dark:text-muted leading-relaxed max-w-[26rem]">
+            <p className="text-[11px] text-muted-dark dark:text-muted [.alt-dimension_&]:text-white/50 leading-relaxed max-w-[26rem] transition-colors duration-700">
               Wysyłając, wyrażasz zgodę na przetwarzanie danych w celu
               odpowiedzi.{" "}
               <a
                 href="/polityka-prywatnosci"
-                className="underline underline-offset-2 hover:text-chalk dark:hover:text-ink transition-colors"
+                className="underline underline-offset-2 hover:text-chalk dark:hover:text-ink [.alt-dimension_&]:hover:text-white transition-colors"
               >
                 Polityka prywatności
               </a>

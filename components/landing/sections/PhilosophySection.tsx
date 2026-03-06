@@ -48,17 +48,21 @@ export default function PhilosophySection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-28 sm:py-36 md:py-64 px-6 sm:px-8 w-full overflow-hidden bg-ink dark:bg-washi text-washi dark:text-ink"
+      className="relative py-28 sm:py-36 md:py-64 px-6 sm:px-8 w-full overflow-hidden bg-ink dark:bg-washi text-washi dark:text-ink [.alt-dimension_&]:bg-[url('/dimension2/pexels-resourceboy-18541781.jpg')] [.alt-dimension_&]:bg-cover [.alt-dimension_&]:bg-center [.alt-dimension_&]:bg-no-repeat [.alt-dimension_&]:bg-fixed [.alt-dimension_&]:text-white"
     >
+      {/* Background overlay for alt-dimension */}
+      <div className="absolute inset-0 pointer-events-none bg-black/60 opacity-0 transition-opacity duration-1000 [.alt-dimension_&]:opacity-50 z-0 border-y border-white/5" />
+
       {/* Self-hosted noise texture */}
       <div
-        className="absolute inset-0 opacity-[0.12] pointer-events-none mix-blend-overlay"
+        className="absolute inset-0 opacity-[0.12] pointer-events-none mix-blend-overlay transition-opacity duration-1000 [.alt-dimension_&]:opacity-0"
         style={{
           backgroundImage: "url('/paper-texture.png')",
         }}
       />
 
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_50%_50%,rgba(196,90,59,0.06)_0%,transparent_60%)]" />
+      {/* Subtle radial glow */}
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_50%_50%,var(--color-accent-muted)_0%,transparent_60%)] opacity-40 [.alt-dimension_&]:opacity-100 transition-opacity duration-1000" />
 
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center">
         <p className="philosophy-text font-sans text-xs sm:text-sm text-current/55 font-medium tracking-[0.15em] uppercase mb-6 sm:mb-8">

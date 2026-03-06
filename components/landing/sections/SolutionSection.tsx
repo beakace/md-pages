@@ -92,12 +92,12 @@ export default function SolutionSection() {
         src="/svg/4.svg"
         alt=""
         aria-hidden="true"
-        className="hidden md:block absolute -left-10 lg:left-[5%] top-[15%] w-48 lg:w-72 pointer-events-none select-none opacity-10 rotate-[15deg]"
+        className="hidden md:block absolute -left-10 lg:left-[5%] top-[15%] w-48 lg:w-72 pointer-events-none select-none opacity-10 rotate-[15deg] [.alt-dimension_&]:hidden"
         style={{ filter: accentFilter }}
       />
 
       <div className="max-w-[56rem] mx-auto relative z-10">
-        <p className="font-handwritten text-accent text-xl md:text-2xl mb-6 -rotate-2">
+        <p className="font-handwritten text-accent text-xl md:text-2xl mb-6 -rotate-2 [.alt-dimension_&]:text-white [.alt-dimension_&]:font-sans [.alt-dimension_&]:uppercase [.alt-dimension_&]:tracking-[0.2em] [.alt-dimension_&]:text-xs [.alt-dimension_&]:font-bold [.alt-dimension_&]:not-italic [.alt-dimension_&]:transform-none transition-all duration-700">
           Moje zasady
         </p>
 
@@ -123,15 +123,15 @@ export default function SolutionSection() {
             const parts = item.text.split(item.hl);
             return (
               <li key={i} className="solution-list-item flex items-start gap-6 group">
-                <span className="text-accent/40 font-serif italic text-3xl md:text-4xl mt-[-6px] group-hover:text-accent transition-colors duration-500">
+                <span className="text-accent/40 [.alt-dimension_&]:text-accent font-serif italic text-3xl md:text-4xl mt-[-6px] group-hover:text-accent transition-colors duration-500">
                   ~
                 </span>
                 <span className="leading-relaxed">
                   {parts[0]}
-                  <span className="relative inline-block text-ink dark:text-chalk font-semibold whitespace-nowrap mx-1">
+                  <span className="relative inline-block text-ink dark:text-chalk [.alt-dimension_&]:text-accent font-semibold whitespace-nowrap mx-1">
                     <span className="relative z-10 pb-1">{item.hl}</span>
                     <svg
-                      className="absolute -bottom-1.5 md:-bottom-2 -left-1 w-[105%] h-[14px] text-accent/30 pointer-events-none z-0"
+                      className="absolute -bottom-1.5 md:-bottom-2 -left-1 w-[105%] h-[14px] text-accent/30 pointer-events-none z-0 [.alt-dimension_&]:hidden"
                       viewBox="0 0 100 24"
                       preserveAspectRatio="none"
                     >
@@ -157,11 +157,11 @@ export default function SolutionSection() {
             src="/svg/9.svg"
             alt=""
             aria-hidden="true"
-            className="absolute -top-24 right-0 lg:-right-20 w-24 lg:w-32 pointer-events-none select-none rotate-[230deg] opacity-20"
+            className="absolute -top-24 right-0 lg:-right-20 w-24 lg:w-32 pointer-events-none select-none rotate-[230deg] opacity-20 [.alt-dimension_&]:hidden"
             style={{ filter: accentFilter }}
           />
 
-          <p className="font-handwritten text-accent text-2xl md:text-3xl mb-12 -rotate-1 text-center md:text-left">
+          <p className="font-handwritten text-accent text-2xl md:text-3xl mb-12 -rotate-1 text-center md:text-left [.alt-dimension_&]:text-white [.alt-dimension_&]:font-sans [.alt-dimension_&]:uppercase [.alt-dimension_&]:tracking-[0.2em] [.alt-dimension_&]:text-xs [.alt-dimension_&]:font-bold [.alt-dimension_&]:not-italic [.alt-dimension_&]:transform-none transition-all duration-700">
             Co dokładnie dostajesz?
           </p>
 
@@ -172,10 +172,10 @@ export default function SolutionSection() {
                 className="benefit-card flex flex-col pt-8 border-t border-graphite/20 dark:border-chalk/20"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="font-serif italic text-xl md:text-2xl text-accent/50 mt-1">
+                  <span className="font-serif italic text-xl md:text-2xl text-accent/50 [.alt-dimension_&]:text-accent mt-1">
                     0{i + 1}
                   </span>
-                  <h4 className="font-serif italic text-2xl md:text-3xl text-ink dark:text-chalk leading-tight">
+                  <h4 className="font-serif italic text-2xl md:text-3xl text-ink dark:text-chalk [.alt-dimension_&]:text-white leading-tight">
                     {item.title}
                   </h4>
                 </div>

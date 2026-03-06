@@ -94,7 +94,7 @@ export default function OpusProcessSection() {
   return (
     <section ref={containerRef} className="py-28 md:py-36 px-6 md:px-16 lg:px-24 bg-washi dark:bg-surface-dark" id="proces">
       <div className="max-w-4xl mx-auto text-center mb-24 md:mb-32">
-        <p className="font-handwritten text-accent text-xl md:text-2xl mb-3 rotate-1">
+        <p className="font-handwritten text-accent text-xl md:text-2xl mb-3 rotate-1 [.alt-dimension_&]:text-white [.alt-dimension_&]:font-sans [.alt-dimension_&]:uppercase [.alt-dimension_&]:tracking-[0.2em] [.alt-dimension_&]:text-xs [.alt-dimension_&]:font-bold [.alt-dimension_&]:not-italic [.alt-dimension_&]:transform-none transition-all duration-700">
           Prosty, przejrzysty proces
         </p>
         <h2 className="font-serif italic text-3xl md:text-5xl text-ink dark:text-chalk leading-tight">
@@ -137,7 +137,7 @@ export default function OpusProcessSection() {
               </p>
 
               <div
-                className={`opus-step-note absolute md:-right-20 top-0 md:top-0 -top-8 font-handwritten text-xl text-accent/80 ${step.noteRot} hidden sm:block`}
+                className={`opus-step-note absolute md:-right-20 top-0 md:top-0 -top-8 font-handwritten text-xl text-accent/80 ${step.noteRot} hidden sm:block [.alt-dimension_&]:text-white/80 [.alt-dimension_&]:font-sans [.alt-dimension_&]:uppercase [.alt-dimension_&]:tracking-[0.1em] [.alt-dimension_&]:text-[10px] [.alt-dimension_&]:font-bold [.alt-dimension_&]:not-italic [.alt-dimension_&]:transform-none transition-all duration-700`}
               >
                 {step.note}
                 <svg

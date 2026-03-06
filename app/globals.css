@@ -5,11 +5,22 @@
 html {
   --line-color: #e5e7eb;
   --grid-color: rgba(28, 27, 24, 1);
+  --color-accent: #c45a3b;
+  --color-accent-light: #d4705a;
+  --color-accent-muted: rgba(196, 90, 59, 0.15);
 }
 
 html.dark {
   --line-color: rgba(255, 255, 255, 0.2);
   --grid-color: rgba(255, 255, 255, 1);
+}
+
+html.alt-dimension {
+  --color-accent: #b91c1c; /* Deep red from the provided image */
+  --color-accent-light: #dc2626;
+  --color-accent-muted: rgba(185, 28, 28, 0.15);
+  --font-sans: var(--font-space-grotesk) !important;
+  --font-serif: var(--font-syne) !important;
 }
 
 @layer utilities {
@@ -36,4 +47,9 @@ html.dark {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+@keyframes subtle-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
 }

@@ -17,11 +17,11 @@ module.exports = {
           DEFAULT: '#fafaf9',
           dark: '#0c0c0c',
         },
-        // Warm terracotta accent - used sparingly
+        // Warm terracotta default, dynamic in alt dimension
         accent: {
-          DEFAULT: '#c45a3b',
-          light: '#d4705a',
-          muted: 'rgba(196, 90, 59, 0.15)',
+          DEFAULT: 'var(--color-accent)',
+          light: 'var(--color-accent-light)',
+          muted: 'var(--color-accent-muted)',
         },
         // Tactile redesign colors
         washi: '#F7F5F0',

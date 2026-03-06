@@ -82,7 +82,7 @@ export default function AboutSection() {
               src="/svg/6.svg"
               alt=""
               aria-hidden="true"
-              className="absolute -left-10 -bottom-10 w-48 opacity-20 pointer-events-none select-none -rotate-12"
+              className="absolute -left-10 -bottom-10 w-48 opacity-20 pointer-events-none select-none -rotate-12 [.alt-dimension_&]:hidden"
               style={{ filter: accentFilter }}
             />
 
@@ -105,10 +105,10 @@ export default function AboutSection() {
                 src="/svg/5.svg"
                 alt=""
                 aria-hidden="true"
-                className="w-16 md:w-24 mb-6 opacity-30 select-none pointer-events-none"
+                className="w-16 md:w-24 mb-6 opacity-30 select-none pointer-events-none [.alt-dimension_&]:hidden"
                 style={{ filter: accentFilter }}
               />
-              <p className="font-handwritten text-accent text-xl md:text-2xl mb-2 -rotate-2">
+              <p className="font-handwritten text-accent text-xl md:text-2xl mb-2 -rotate-2 [.alt-dimension_&]:text-white [.alt-dimension_&]:font-sans [.alt-dimension_&]:uppercase [.alt-dimension_&]:tracking-[0.2em] [.alt-dimension_&]:text-xs [.alt-dimension_&]:font-bold [.alt-dimension_&]:not-italic [.alt-dimension_&]:transform-none transition-all duration-700">
                 Słowo na koniec
               </p>
               <h2 className="font-serif italic text-4xl sm:text-5xl md:text-6xl text-ink dark:text-chalk leading-tight">
@@ -138,7 +138,7 @@ export default function AboutSection() {
             </div>
 
             <div className="about-signature mt-16 pt-10 border-t border-transparent md:border-graphite/10 md:dark:border-chalk/10 inline-block w-full lg:w-auto text-center lg:text-left">
-              <p className="font-handwritten text-4xl sm:text-5xl text-accent -rotate-3 hover:rotate-0 transition-transform duration-500 cursor-default">
+              <p className="font-handwritten text-4xl sm:text-5xl text-accent -rotate-3 hover:rotate-0 transition-transform duration-500 cursor-default [.alt-dimension_&]:text-white [.alt-dimension_&]:font-sans [.alt-dimension_&]:uppercase [.alt-dimension_&]:tracking-[0.2em] [.alt-dimension_&]:text-2xl [.alt-dimension_&]:font-bold [.alt-dimension_&]:not-italic [.alt-dimension_&]:transform-none transition-all duration-700">
                 Michał Dziuba
               </p>
             </div>

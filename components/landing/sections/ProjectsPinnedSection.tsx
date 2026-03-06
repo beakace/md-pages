@@ -59,8 +59,8 @@ export default function ProjectsPinnedSection() {
         projectsData.forEach((_, i) => {
         ScrollTrigger.create({
           trigger: `.pinned-text-${i}`,
-          start: "top 50%",
-          end: "bottom 50%",
+          start: "top 35%",
+          end: "bottom 35%",
           onToggle: (self) => {
             if (self.isActive) {
               setActiveIdx(i);
@@ -116,7 +116,7 @@ export default function ProjectsPinnedSection() {
     <section ref={containerRef} className="py-24 sm:py-36 bg-washi dark:bg-surface-dark relative">
       <div className="px-6 sm:px-8 max-w-[88rem] mx-auto mb-16 relative flex justify-between items-end">
         <div>
-          <p className="font-handwritten text-accent text-xl md:text-2xl mb-4 rotate-2">
+          <p className="font-handwritten text-accent text-xl md:text-2xl mb-4 rotate-2 [.alt-dimension_&]:text-white [.alt-dimension_&]:font-sans [.alt-dimension_&]:uppercase [.alt-dimension_&]:tracking-[0.2em] [.alt-dimension_&]:text-xs [.alt-dimension_&]:font-bold [.alt-dimension_&]:not-italic [.alt-dimension_&]:transform-none transition-all duration-700">
             Wybrane prace
           </p>
           <h2 className="pinned-projects-title font-serif italic text-4xl md:text-6xl text-ink dark:text-chalk leading-none">
