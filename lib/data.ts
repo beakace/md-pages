@@ -1,4 +1,4 @@
-import agFizjo from "@/public/updated-projects/ag.png";
+import agFizjo from "@/public/updated-projects/ag2.png";
 import czysto from "@/public/updated-projects/ctw.png";
 import kalkulacjaGap from "@/public/updated-projects/kg.png";
 import nieziemsko from "@/public/updated-projects/n.png";
