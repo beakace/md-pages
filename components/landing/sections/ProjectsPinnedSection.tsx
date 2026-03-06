@@ -199,8 +199,8 @@ export default function ProjectsPinnedSection() {
                 {/* All project images start hidden */}
                 <div className="relative flex-1 w-full h-full bg-graphite/5 dark:bg-surface-dark">
                   {/* Decorative Placeholder — MD monogram watermark */}
-                  <div className="project-placeholder absolute inset-0 w-full h-full flex items-center justify-center z-20 bg-white dark:bg-ink">
-                    <span className="font-serif italic text-[8rem] xl:text-[10rem] text-graphite/[0.06] dark:text-chalk/[0.06] leading-none select-none pointer-events-none tracking-tight">
+                  <div className="project-placeholder absolute inset-0 w-full h-full flex items-center justify-center z-20 bg-white dark:bg-ink pointer-events-none">
+                    <span className="font-serif italic text-[8rem] xl:text-[10rem] text-graphite/[0.06] dark:text-chalk/[0.06] leading-none select-none tracking-tight">
                       MD
                     </span>
                     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent/40" />
