@@ -231,12 +231,7 @@ export default function ProjectsPinnedSection() {
                 </div>
               </div>
               
-              {/* Decorative floating sketch */}
-              <svg className="absolute -right-8 -bottom-12 w-24 h-24 text-accent/30 -z-10 rotate-12 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M10 50 Q 30 10, 50 50 T 90 50" strokeLinecap="round" />
-                <path d="M30 30 Q 50 70, 70 30" strokeLinecap="round" />
-                <circle cx="50" cy="50" r="40" strokeDasharray="4 4" />
-              </svg>
+
 
             </div>
           </div>
