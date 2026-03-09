@@ -17,17 +17,20 @@ export default function HeroSection() {
           backgroundSize: "80px 80px",
         }}
       />
-      <img
-        src="/svg/3.svg"
-        alt=""
-        aria-hidden="true"
-        className="absolute right-4 md:-right-16 md:top-1/4 top-[17%] w-32 sm:w-40 pointer-events-none select-none block opacity-25 transition-opacity duration-1000 [.alt-dimension_&]:hidden"
-        style={{
-          filter: accentFilter,
-          clipPath: "inset(0 100% 0 0)",
-          animation: "reveal-right 0.6s 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards",
-        }}
-      />
+      {/* Doodle container */}
+      <div className="absolute inset-0 mx-auto max-w-[64rem] w-full h-full pointer-events-none z-10">
+        <img
+          src="/svg/3.svg"
+          alt=""
+          aria-hidden="true"
+          className="absolute right-4 md:-right-16 md:top-1/4 top-[17%] w-32 sm:w-40 pointer-events-none select-none block opacity-25 transition-opacity duration-1000 [.alt-dimension_&]:hidden"
+          style={{
+            filter: accentFilter,
+            clipPath: "inset(0 100% 0 0)",
+            animation: "reveal-right 0.6s 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+          }}
+        />
+      </div>
 
       {/* ── Alt Dimension Cinematic Background ── */}
       <div 
